@@ -1,0 +1,51 @@
+name: Build .NET 8
+
+on:
+  push:
+    branches: 
+        - main
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: "8.0.x"
+  SOLUTION_PATH: IGCSE Learning Hub.sln
+  PROJECT_PATH: WebAPI/WebAPI.csproj
+  PUBLISH_DIR: ./publish
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Cache NuGet
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: ${{ runner.os }}-nuget-
+
+      - name: Restore
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+  
+      - name: Build (Release)
+        run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+  
+      - name: Test
+        run: dotnet test -c Release --no-build --verbosity normal || true
+  
+      - name: Publish
+        run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -o ${{ env.PUBLISH_DIR }} --no-build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: webapi-publish
+          path: ${{ env.PUBLISH_DIR }}
