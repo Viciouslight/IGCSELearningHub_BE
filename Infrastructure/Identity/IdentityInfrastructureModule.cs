@@ -2,6 +2,7 @@ using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Infrastructure.Identity.Authentication;
 using IGCSELearningHub.Infrastructure.Identity.Repositories;
+using IGCSELearningHub.Infrastructure.Security;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IGCSELearningHub.Infrastructure.Identity;
@@ -14,6 +15,7 @@ public static class IdentityInfrastructureModule
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IDeviceRepository, DeviceRepository>();
         services.AddSingleton<IExternalAuthProvider, FirebaseExternalAuthProvider>();
+        services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
         return services;
     }
 }

@@ -15,19 +15,22 @@ namespace IGCSELearningHub.Application.Identity.Authentication.Services
         private readonly ILogger<AuthenticationService> _logger;
         private readonly IMapper _mapper;
         private readonly IExternalAuthProvider _externalAuth;
+        private readonly IPasswordHasher _passwordHasher;
 
         public AuthenticationService(
             IUnitOfWork unitOfWork,
             ITokenService tokenService,
             ILogger<AuthenticationService> logger,
             IMapper mapper,
-            IExternalAuthProvider externalAuth)
+            IExternalAuthProvider externalAuth,
+            IPasswordHasher passwordHasher)
         {
             _unitOfWork = unitOfWork;
             _tokenService = tokenService;
             _logger = logger;
             _mapper = mapper;
             _externalAuth = externalAuth;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<ApiResult<AuthenticatedUserDTO>> RegisterAsync(AccountRegistrationDTO registrationDto)
@@ -51,7 +54,7 @@ namespace IGCSELearningHub.Application.Identity.Authentication.Services
                 try
                 {
                     var account = _mapper.Map<Account>(registrationDto);
-                    account.Password = BCrypt.Net.BCrypt.HashPassword(registrationDto.Password, workFactor: 12);
+                    account.Password = _passwordHasher.HashPassword(registrationDto.Password);
 
                     await _unitOfWork.AccountRepository.AddAsync(account);
                     await _unitOfWork.SaveChangesAsync();
@@ -82,7 +85,7 @@ namespace IGCSELearningHub.Application.Identity.Authentication.Services
                 return ApiResult<AuthenticatedUserDTO>.Fail("Invalid credentials or account is banned.");
             }
 
-            if (!BCrypt.Net.BCrypt.Verify(loginDto.Password, account.Password))
+            if (!_passwordHasher.VerifyPassword(loginDto.Password, account.Password))
             {
                 _logger.LogWarning("Invalid credentials provided.");
                 return ApiResult<AuthenticatedUserDTO>.Fail("Invalid credentials.");

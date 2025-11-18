@@ -6,6 +6,7 @@ using IGCSELearningHub.Application.Wrappers;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 using System.Text;
+using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 
 namespace IGCSELearningHub.Application.Identity.Accounts.Services
 {
@@ -15,17 +16,20 @@ namespace IGCSELearningHub.Application.Identity.Accounts.Services
         private readonly ILogger<AccountProfileService> _logger;
         private readonly IEmailSender _emailSender;
         private readonly IMapper _mapper;
+        private readonly IPasswordHasher _passwordHasher;
 
         public AccountProfileService(
             IUnitOfWork unitOfWork,
             ILogger<AccountProfileService> logger,
             IEmailSender emailSender,
-            IMapper mapper)
+            IMapper mapper,
+            IPasswordHasher passwordHasher)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
             _emailSender = emailSender;
             _mapper = mapper;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<ApiResult<AccountDTO>> UpdateProfileAsync(int accountId, UpdateAccountDTO updateDto)
@@ -64,7 +68,7 @@ namespace IGCSELearningHub.Application.Identity.Accounts.Services
             if (dto.NewPassword != dto.ConfirmNewPassword)
                 return ApiResult<string>.Fail("New password and confirmation do not match.", 400);
 
-            account.Password = BCrypt.Net.BCrypt.HashPassword(dto.NewPassword, workFactor: 12);
+            account.Password = _passwordHasher.HashPassword(dto.NewPassword);
 
             _unitOfWork.AccountRepository.Update(account);
             await _unitOfWork.SaveChangesAsync();
@@ -90,7 +94,7 @@ namespace IGCSELearningHub.Application.Identity.Accounts.Services
 
             var originalPassword = account.Password;
             var temporaryPassword = GenerateTemporaryPassword();
-            account.Password = BCrypt.Net.BCrypt.HashPassword(temporaryPassword, workFactor: 12);
+            account.Password = _passwordHasher.HashPassword(temporaryPassword);
 
             _unitOfWork.AccountRepository.Update(account);
             await _unitOfWork.SaveChangesAsync();
