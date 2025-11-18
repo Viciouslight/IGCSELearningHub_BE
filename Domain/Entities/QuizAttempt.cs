@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Identity.Accounts;
 using System;
 using System.Collections.Generic;
 

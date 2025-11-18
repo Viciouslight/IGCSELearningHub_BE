@@ -1,5 +1,6 @@
 ﻿using Domain.Common;
 using Domain.Enums;
+using Domain.Identity.Accounts;
 
 namespace Domain.Entities;
 

@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Identity.Accounts;
 
 namespace Domain.Entities;
 
