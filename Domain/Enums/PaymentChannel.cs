@@ -1,4 +1,4 @@
-﻿namespace Domain.Enums
+﻿namespace IGCSELearningHub.Domain.Enums
 {
     public enum PaymentChannel
     {

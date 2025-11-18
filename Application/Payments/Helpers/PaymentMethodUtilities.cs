@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Application;
-using Domain.Entities;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Payments.Helpers
+namespace IGCSELearningHub.Application.Payments.Helpers
 {
     public static class PaymentMethodUtilities
     {

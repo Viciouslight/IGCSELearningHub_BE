@@ -4,7 +4,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Infrastructure.Payments.Providers.VnPay
+namespace IGCSELearningHub.Infrastructure.Payments.Providers.VnPay
 {
     public class VnPayLibrary
     {

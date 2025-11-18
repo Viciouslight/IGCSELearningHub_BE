@@ -1,6 +1,6 @@
-﻿using Application.Utils.Interfaces;
+﻿using IGCSELearningHub.Application.Utils.Interfaces;
 
-namespace Application.Utils
+namespace IGCSELearningHub.Application.Utils
 {
     public class DateTimeProvider : IDateTimeProvider
     {

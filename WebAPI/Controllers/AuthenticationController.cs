@@ -1,11 +1,11 @@
-﻿using Application.Authentication.DTOs;
-using Application.Authentication.Interfaces;
-using Application.Exceptions;
-using Asp.Versioning;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.Identity.Authentication.DTOs;
+using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
+using IGCSELearningHub.Application.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

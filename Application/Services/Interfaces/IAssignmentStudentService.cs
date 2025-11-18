@@ -1,7 +1,7 @@
-using Application.DTOs.Assignments;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Assignments;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Services.Interfaces
 {
     public interface IAssignmentStudentService
     {

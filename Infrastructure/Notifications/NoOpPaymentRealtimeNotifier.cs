@@ -1,9 +1,7 @@
-using Application.Notifications;
+using IGCSELearningHub.Application.Notifications;
 using Microsoft.Extensions.Logging;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Infrastructure.Notifications
+namespace IGCSELearningHub.Infrastructure.Notifications
 {
     public class NoOpPaymentRealtimeNotifier : IPaymentRealtimeNotifier
     {

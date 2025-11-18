@@ -1,11 +1,11 @@
-using Application.DTOs.Lessons;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Domain.Entities;
-using Domain.Enums;
+using IGCSELearningHub.Application.DTOs.Lessons;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class LessonPublicService : ILessonPublicService
     {

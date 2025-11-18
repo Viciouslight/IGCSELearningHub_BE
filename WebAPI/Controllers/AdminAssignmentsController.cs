@@ -1,10 +1,10 @@
-using Application.Services.Interfaces;
-using Application.DTOs.Assignments;
 using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.Assignments;
+using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

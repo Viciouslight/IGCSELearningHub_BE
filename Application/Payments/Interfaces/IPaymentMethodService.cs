@@ -1,7 +1,7 @@
-using Application.DTOs.Payments;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Payments;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Payments.Interfaces
+namespace IGCSELearningHub.Application.Payments.Interfaces
 {
     public interface IPaymentMethodService
     {

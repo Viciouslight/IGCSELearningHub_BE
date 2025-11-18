@@ -1,4 +1,4 @@
-﻿namespace Application.Wrappers;
+﻿namespace IGCSELearningHub.Application.Wrappers;
 
 /// <summary>
 /// Lightweight result envelope for internal service-to-service calls.

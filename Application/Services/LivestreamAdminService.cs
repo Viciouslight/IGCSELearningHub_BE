@@ -1,12 +1,12 @@
-﻿using Application.Services.Interfaces;
-using Application.Wrappers;
-using Application.Extensions;
-using Domain.Entities;
+﻿using IGCSELearningHub.Application.DTOs.Livestreams;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Application.DTOs.Livestreams;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class LivestreamAdminService : ILivestreamAdminService
     {
@@ -86,7 +86,7 @@ namespace Application.Services
                 return ApiResult<int>.Fail("Title is required.", 400);
             if (dto.Price < 0)
                 return ApiResult<int>.Fail("Price must be >= 0.", 400);
-            
+
             var course = await _uow.CourseRepository.GetByIdAsync(dto.CourseId);
             if (course == null) return ApiResult<int>.Fail("Course not found.", 404);
 

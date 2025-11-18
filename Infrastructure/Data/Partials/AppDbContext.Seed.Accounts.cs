@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using Domain.Entities;
-using Domain.Enums;
+using IGCSELearningHub.Domain.Identity.Accounts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data

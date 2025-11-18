@@ -1,8 +1,8 @@
-using Application.DTOs.Courses;
-using Application.DTOs.Lessons;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Courses;
+using IGCSELearningHub.Application.DTOs.Lessons;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Services.Interfaces
 {
     public interface ILessonStudentService
     {

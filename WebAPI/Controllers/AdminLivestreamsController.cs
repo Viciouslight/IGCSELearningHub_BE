@@ -1,11 +1,10 @@
-﻿using Application.DTOs.Livestreams;
-using Application.Services.Interfaces;
-using Asp.Versioning;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.Livestreams;
+using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

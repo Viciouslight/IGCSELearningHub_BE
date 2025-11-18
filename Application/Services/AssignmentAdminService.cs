@@ -1,13 +1,13 @@
-﻿using Application.Services.Interfaces;
-using Application.DTOs.Assignments;
-using Application.Wrappers;
-using Application.Extensions;
-using Domain.Entities;
+﻿using IGCSELearningHub.Application.DTOs.Assignments;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Mapping;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Application.Mapping;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class AssignmentAdminService : IAssignmentAdminService
     {

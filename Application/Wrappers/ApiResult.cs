@@ -1,4 +1,4 @@
-﻿namespace Application.Wrappers;
+﻿namespace IGCSELearningHub.Application.Wrappers;
 
 public class ApiResult<T>
 {

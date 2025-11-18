@@ -1,5 +1,4 @@
-﻿
-namespace Application.Wrappers
+﻿namespace IGCSELearningHub.Application.Wrappers
 {
     public class PagedResult<T> : ApiResult<IEnumerable<T>>
     {

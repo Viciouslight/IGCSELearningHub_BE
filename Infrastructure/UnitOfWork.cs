@@ -1,9 +1,9 @@
-﻿using Application;
-using Application.IRepository;
+﻿using IGCSELearningHub.Application;
+using IGCSELearningHub.Application.IRepository;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Infrastructure
+namespace IGCSELearningHub.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -42,7 +42,7 @@ namespace Infrastructure
         public IEnrollmentRepository EnrollmentRepository => _enrollmentRepository;
         public IQuestionRepository QuestionRepository => _questionRepository;
         public IQuestionOptionRepository QuestionOptionRepository => _questionOptionRepository;
-        public IQuizRepository QuizRepository => _quizRepository;   
+        public IQuizRepository QuizRepository => _quizRepository;
         public IQuizQuestionRepository QuizQuestionRepository => _quizQuestionRepository;
         public IQuizAttemptRepository QuizAttemptRepository => _quizAttemptRepository;
         public IUnitRepository UnitRepository => _unitRepository;

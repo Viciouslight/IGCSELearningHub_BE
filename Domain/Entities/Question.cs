@@ -1,9 +1,7 @@
-﻿using Domain.Common;
-using Domain.Enums;
-using System;
-using System.Collections.Generic;
+﻿using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Enums;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class Question : BaseFullEntity
 {

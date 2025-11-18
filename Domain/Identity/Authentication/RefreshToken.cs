@@ -1,7 +1,7 @@
-using Domain.Common;
-using Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Identity.Accounts;
 
-namespace Domain.Identity.Authentication;
+namespace IGCSELearningHub.Domain.Identity.Authentication;
 
 public partial class RefreshToken : BaseFullEntity
 {

@@ -1,7 +1,7 @@
-using Application.DTOs.Units;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Units;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Services.Interfaces
 {
     public interface IUnitService
     {

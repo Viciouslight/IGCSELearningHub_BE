@@ -1,15 +1,12 @@
-using Application.Utils;
-using Application.Utils.Interfaces;
+using IGCSELearningHub.Application.Utils;
+using IGCSELearningHub.Application.Utils.Interfaces;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Infrastructure.Email
+namespace IGCSELearningHub.Infrastructure.Email
 {
     public class MailKitEmailSender : IEmailSender
     {

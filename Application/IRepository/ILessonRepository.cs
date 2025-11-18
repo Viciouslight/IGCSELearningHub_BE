@@ -1,6 +1,6 @@
-using Domain.Entities;
+using IGCSELearningHub.Domain.Entities;
 
-namespace Application.IRepository
+namespace IGCSELearningHub.Application.IRepository
 {
     public interface ILessonRepository : IGenericRepository<Lesson>
     {

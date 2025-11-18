@@ -1,6 +1,4 @@
-using System;
-
-namespace Application.DTOs.Assignments
+namespace IGCSELearningHub.Application.DTOs.Assignments
 {
     public class StudentAssignmentItemDTO
     {

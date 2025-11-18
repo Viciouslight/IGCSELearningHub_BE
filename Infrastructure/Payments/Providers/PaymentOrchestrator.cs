@@ -1,18 +1,18 @@
-﻿using Application;
-using Application.Notifications;
-using Application.Payments.DTOs;
-using Application.Payments.Helpers;
-using Application.Payments.Interfaces;
-using Application.Services.Interfaces;
-using Domain.Entities;
-using Domain.Enums;
-using Infrastructure.Payments.Providers.VnPay;
+﻿using IGCSELearningHub.Application;
+using IGCSELearningHub.Application.Identity.Devices.Interfaces;
+using IGCSELearningHub.Application.Notifications;
+using IGCSELearningHub.Application.Payments.DTOs;
+using IGCSELearningHub.Application.Payments.Helpers;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Infrastructure.Payments.Providers.VnPay;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using Microsoft.Extensions.Logging;
 
-namespace Infrastructure.Payments.Providers
+namespace IGCSELearningHub.Infrastructure.Payments.Providers
 {
     public sealed class PaymentOrchestrator : IPaymentOrchestrator
     {

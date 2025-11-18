@@ -1,7 +1,7 @@
-using Application.DTOs.CoursePackages;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.CoursePackages;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Services.Interfaces
 {
     public interface ICoursePackagePublicService
     {

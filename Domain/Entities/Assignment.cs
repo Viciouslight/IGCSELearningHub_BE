@@ -1,6 +1,6 @@
-﻿using Domain.Common;
+﻿using IGCSELearningHub.Domain.Common;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class Assignment : BaseFullEntity
 {

@@ -1,6 +1,6 @@
-using Domain.Entities;
+using IGCSELearningHub.Domain.Identity.Authentication;
 
-namespace Application.IRepository
+namespace IGCSELearningHub.Application.IRepository
 {
     public interface IRefreshTokenRepository : IGenericRepository<RefreshToken>
     {

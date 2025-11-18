@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using Application.DTOs.Payments;
-using Application.Exceptions;
-using Application.Payments.Interfaces;
-using Asp.Versioning;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.Payments;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

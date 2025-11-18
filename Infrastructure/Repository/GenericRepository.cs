@@ -1,11 +1,11 @@
-using Application.IRepository;
-using Application.Utils.Interfaces;
-using Domain.Common;
+using IGCSELearningHub.Application.IRepository;
+using IGCSELearningHub.Application.Utils.Interfaces;
+using IGCSELearningHub.Domain.Common;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Infrastructure.Repository
+namespace IGCSELearningHub.Infrastructure.Repository
 {
     public class GenericRepository<TModel> : IGenericRepository<TModel> where TModel : BaseFullEntity
     {

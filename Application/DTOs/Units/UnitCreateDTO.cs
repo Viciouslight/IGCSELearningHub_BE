@@ -1,4 +1,4 @@
-namespace Application.DTOs.Units
+namespace IGCSELearningHub.Application.DTOs.Units
 {
     public class UnitCreateDTO
     {

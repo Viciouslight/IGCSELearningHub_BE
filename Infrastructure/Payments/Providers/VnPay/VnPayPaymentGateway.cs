@@ -1,12 +1,12 @@
-﻿using Application.Payments.DTOs;
-using Application.Payments.Interfaces;
-using Infrastructure.Payments.Options;
+﻿using IGCSELearningHub.Application.Payments.DTOs;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Infrastructure.Payments.Options;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
 using System.Text;
 
-namespace Infrastructure.Payments.Providers.VnPay
+namespace IGCSELearningHub.Infrastructure.Payments.Providers.VnPay
 {
     public sealed class VnPayPaymentGateway : IPaymentGateway
     {
@@ -44,7 +44,7 @@ namespace Infrastructure.Payments.Providers.VnPay
             vnp.AddRequestData("vnp_IpAddr", clientIp);
             vnp.AddRequestData("vnp_Locale", _opt.vnp_Locale);
             vnp.AddRequestData("vnp_OrderInfo", orderInfo);
-            vnp.AddRequestData("vnp_OrderType", orderTypeCode); 
+            vnp.AddRequestData("vnp_OrderType", orderTypeCode);
             vnp.AddRequestData("vnp_ReturnUrl", _opt.vnp_ReturnUrl);
             vnp.AddRequestData("vnp_TxnRef", txnRef);
 
@@ -79,8 +79,8 @@ namespace Infrastructure.Payments.Providers.VnPay
             var inputHash = query["vnp_SecureHash"].ToString();
             var isValid = vnp.ValidateSignature(inputHash, _opt.vnp_HashSecret);
 
-            var rspCode = vnp.GetResponseData("vnp_ResponseCode");          
-            var txnStatus = vnp.GetResponseData("vnp_TransactionStatus");   
+            var rspCode = vnp.GetResponseData("vnp_ResponseCode");
+            var txnStatus = vnp.GetResponseData("vnp_TransactionStatus");
             var amountStr = vnp.GetResponseData("vnp_Amount");
             var txnRef = vnp.GetResponseData("vnp_TxnRef");
             var bankCode = vnp.GetResponseData("vnp_BankCode");

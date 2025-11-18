@@ -1,4 +1,4 @@
-﻿namespace Domain.Common
+﻿namespace IGCSELearningHub.Domain.Common
 {
     public interface IBaseEntity
     {

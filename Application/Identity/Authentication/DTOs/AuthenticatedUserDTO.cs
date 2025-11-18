@@ -1,0 +1,16 @@
+﻿namespace IGCSELearningHub.Application.Identity.Authentication.DTOs
+{
+    public class AuthenticatedUserDTO
+    {
+        public string AccessToken { get; set; } = string.Empty;
+        public string RefreshToken { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
+        public string Status { get; set; }
+        public bool IsExternal { get; set; }
+        public string Gender { get; set; } = string.Empty;
+    }
+}

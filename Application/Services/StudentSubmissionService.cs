@@ -1,13 +1,13 @@
-﻿using Application.DTOs.Submissions;
-using Application.Services.Interfaces;
-using Application.Extensions;
-using Application.Utils.Interfaces;
-using Application.Wrappers;
-using Domain.Entities;
+﻿using IGCSELearningHub.Application.DTOs.Submissions;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Utils.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class StudentSubmissionService : IStudentSubmissionService
     {

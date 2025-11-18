@@ -1,11 +1,10 @@
-﻿using Application.DTOs.QuizTaking;
-using Application.Services.Interfaces;
-using Asp.Versioning;
-using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.QuizTaking;
+using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

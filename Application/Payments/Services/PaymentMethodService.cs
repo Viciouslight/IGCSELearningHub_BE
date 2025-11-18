@@ -1,12 +1,11 @@
-using System.Linq;
-using Application.DTOs.Payments;
-using Application.Payments.Helpers;
-using Application.Payments.Interfaces;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Payments;
+using IGCSELearningHub.Application.Payments.Helpers;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Payments.Services
+namespace IGCSELearningHub.Application.Payments.Services
 {
     public class PaymentMethodService : IPaymentMethodService
     {

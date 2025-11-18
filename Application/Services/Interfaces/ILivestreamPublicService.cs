@@ -1,7 +1,7 @@
-using Application.DTOs.Livestreams;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Livestreams;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Services.Interfaces
 {
     public interface ILivestreamPublicService
     {

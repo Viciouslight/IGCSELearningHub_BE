@@ -1,7 +1,7 @@
-﻿using Application.Payments.DTOs;
+﻿using IGCSELearningHub.Application.Payments.DTOs;
 using Microsoft.AspNetCore.Http;
 
-namespace Application.Payments.Interfaces
+namespace IGCSELearningHub.Application.Payments.Interfaces
 {
     public interface IPaymentOrchestrator
     {

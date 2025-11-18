@@ -1,12 +1,12 @@
-﻿using Application.Exceptions;
-using Application.Wrappers;
+﻿using IGCSELearningHub.Application.Exceptions;
+using IGCSELearningHub.Application.Wrappers;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Serilog.Context;
 using System.Net;
 using System.Text.Json;
-using Serilog.Context;
 
-namespace WebAPI.Middlewares
+namespace IGCSELearningHub.WebAPI.Middlewares
 {
     public class GlobalExceptionMiddleware
     {

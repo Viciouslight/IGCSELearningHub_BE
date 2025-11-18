@@ -1,7 +1,7 @@
-using Domain.Common;
-using Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Identity.Accounts;
 
-namespace Domain.Identity.Devices;
+namespace IGCSELearningHub.Domain.Identity.Devices;
 
 public class Device : BaseFullEntity
 {

@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Domain.Entities;
+﻿using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Authentication;
+using IGCSELearningHub.Domain.Identity.Devices;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;

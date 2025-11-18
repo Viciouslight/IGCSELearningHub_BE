@@ -1,6 +1,6 @@
-﻿using Domain.Enums;
+﻿using IGCSELearningHub.Domain.Enums;
 
-namespace Application.Payments.DTOs
+namespace IGCSELearningHub.Application.Payments.DTOs
 {
     public class CheckoutRequestDTO
     {

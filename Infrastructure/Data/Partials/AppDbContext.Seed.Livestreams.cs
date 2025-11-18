@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using Domain.Entities;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data

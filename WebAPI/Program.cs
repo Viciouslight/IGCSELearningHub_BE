@@ -1,7 +1,9 @@
-using Application;
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
-using Infrastructure;
+using IGCSELearningHub.Application;
+using IGCSELearningHub.Infrastructure;
+using IGCSELearningHub.WebAPI.Configuration;
+using IGCSELearningHub.WebAPI.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -9,10 +11,8 @@ using Serilog;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
-using WebAPI.Configuration;
-using WebAPI.Middlewares;
 
-namespace WebAPI
+namespace IGCSELearningHub.WebAPI
 {
     public class Program
     {

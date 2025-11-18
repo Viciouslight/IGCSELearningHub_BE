@@ -1,12 +1,7 @@
-﻿using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using IGCSELearningHub.Domain.Common;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.IRepository
+namespace IGCSELearningHub.Application.IRepository
 {
     public interface IGenericRepository<TModel> where TModel : BaseFullEntity
     {

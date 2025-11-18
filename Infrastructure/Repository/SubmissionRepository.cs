@@ -1,9 +1,9 @@
-using Application.IRepository;
-using Application.Utils.Interfaces;
-using Domain.Entities;
+using IGCSELearningHub.Application.IRepository;
+using IGCSELearningHub.Application.Utils.Interfaces;
+using IGCSELearningHub.Domain.Entities;
 using Infrastructure.Data;
 
-namespace Infrastructure.Repository
+namespace IGCSELearningHub.Infrastructure.Repository
 {
     public class SubmissionRepository : GenericRepository<Submission>, ISubmissionRepository
     {

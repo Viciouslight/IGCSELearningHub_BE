@@ -1,11 +1,11 @@
-﻿using Application.Services.Interfaces;
-using Application.Wrappers;
-using Application.Extensions;
-using Domain.Entities;
+﻿using IGCSELearningHub.Application.DTOs.Enrollments;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Application.DTOs.Enrollments;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class EnrollmentStudentService : IEnrollmentStudentService
     {

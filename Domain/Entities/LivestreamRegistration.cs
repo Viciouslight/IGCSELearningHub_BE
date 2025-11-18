@@ -1,7 +1,7 @@
-﻿using Domain.Common;
-using Domain.Identity.Accounts;
+﻿using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Identity.Accounts;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class LivestreamRegistration : BaseFullEntity
 {

@@ -1,11 +1,11 @@
-﻿using Application.DTOs.Enrollments;
-using Application.Services.Interfaces;
-using Asp.Versioning;
-using Domain.Enums;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.Enrollments;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

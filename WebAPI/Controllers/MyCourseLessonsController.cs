@@ -1,11 +1,10 @@
-using Application.Services.Interfaces;
 using Asp.Versioning;
+using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

@@ -1,6 +1,4 @@
-using System.Collections.Generic;
-
-namespace Application.DTOs.CoursePackages
+namespace IGCSELearningHub.Application.DTOs.CoursePackages
 {
     public class PackagePublicDetailDTO
     {

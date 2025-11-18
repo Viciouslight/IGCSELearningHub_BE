@@ -1,11 +1,9 @@
-using Application.DTOs.Livestreams;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using Application.Extensions;
+using IGCSELearningHub.Application.DTOs.Livestreams;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class LivestreamPublicService : ILivestreamPublicService
     {

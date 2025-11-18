@@ -1,9 +1,8 @@
-using Application.DTOs.Assignments;
-using Domain.Entities;
+using IGCSELearningHub.Application.DTOs.Assignments;
+using IGCSELearningHub.Domain.Entities;
 using System.Linq.Expressions;
-using System.Linq;
 
-namespace Application.Mapping
+namespace IGCSELearningHub.Application.Mapping
 {
     public static class AssignmentProjections
     {

@@ -1,11 +1,11 @@
-using Application.DTOs.CoursePackages;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Domain.Entities;
+using IGCSELearningHub.Application.DTOs.CoursePackages;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Application.Extensions;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class CoursePackagePublicService : ICoursePackagePublicService
     {

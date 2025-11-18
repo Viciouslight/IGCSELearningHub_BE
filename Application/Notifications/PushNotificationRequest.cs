@@ -1,6 +1,4 @@
-using System.Collections.Generic;
-
-namespace Application.Notifications
+namespace IGCSELearningHub.Application.Notifications
 {
     public class PushNotificationRequest
     {

@@ -1,4 +1,4 @@
-﻿namespace Application.Constants
+﻿namespace IGCSELearningHub.Application.Constants
 {
     public class PaginationDefaults
     {

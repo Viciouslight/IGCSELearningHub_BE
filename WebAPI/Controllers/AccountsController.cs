@@ -1,12 +1,11 @@
-﻿using Application.DTOs.Accounts;
-using Application.Exceptions;
-using Application.Services.Interfaces;
-using Asp.Versioning;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.Identity.Accounts.DTOs;
+using IGCSELearningHub.Application.Identity.Accounts.Interfaces;
+using IGCSELearningHub.Application.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

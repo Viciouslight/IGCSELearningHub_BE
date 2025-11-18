@@ -1,11 +1,10 @@
-﻿using Application.DTOs;
-using Application.DTOs.Quiz;
-using Application.Services.Interfaces;
-using Asp.Versioning;
-using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs;
+using IGCSELearningHub.Application.DTOs.Quiz;
+using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

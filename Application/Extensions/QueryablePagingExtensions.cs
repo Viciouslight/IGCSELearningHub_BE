@@ -1,11 +1,9 @@
-using Application.Constants;
-using Application.Wrappers;
+using IGCSELearningHub.Application.Constants;
+using IGCSELearningHub.Application.Wrappers;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
 using System.Linq.Expressions;
 
-namespace Application.Extensions
+namespace IGCSELearningHub.Application.Extensions
 {
     public static class QueryablePagingExtensions
     {

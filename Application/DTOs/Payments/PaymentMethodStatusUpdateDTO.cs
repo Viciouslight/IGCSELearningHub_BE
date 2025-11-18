@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Application.DTOs.Payments
+namespace IGCSELearningHub.Application.DTOs.Payments
 {
     public class PaymentMethodStatusUpdateDTO
     {

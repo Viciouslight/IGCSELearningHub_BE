@@ -1,14 +1,13 @@
-using Application.Authentication;
-using Application.Mapping;
-using Application.Payments.Interfaces;
-using Application.Payments.Services;
-using Application.Services;
-using Application.Services.Interfaces;
-using Application.Utils;
-using Application.Utils.Interfaces;
+using IGCSELearningHub.Application.Identity;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.Services;
+using IGCSELearningHub.Application.Services;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Utils;
+using IGCSELearningHub.Application.Utils.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application
+namespace IGCSELearningHub.Application
 {
     public static class DependencyInjection
     {
@@ -16,10 +15,9 @@ namespace Application
         {
             services.AddAutoMapper(cfg => { }, AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddAuthenticationModule();
+            services.AddIdentityModule();
             services.AddScoped<IDateTimeProvider, DateTimeProvider>();
 
-            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IQuizService, QuizService>();
             services.AddScoped<IQuizTakingService, QuizTakingService>();
             services.AddScoped<ICourseCatalogService, CourseCatalogService>();
@@ -42,7 +40,6 @@ namespace Application
             services.AddScoped<ICoursePackagePublicService, CoursePackagePublicService>();
             services.AddScoped<ILessonPublicService, LessonPublicService>();
             services.AddScoped<IPaymentMethodService, PaymentMethodService>();
-            services.AddScoped<IDeviceService, DeviceService>();
 
             return services;
         }

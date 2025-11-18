@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Configuration
+﻿namespace IGCSELearningHub.WebAPI.Configuration
 {
     public sealed class JwtOptions
     {

@@ -1,12 +1,11 @@
-using Application.DTOs.Devices;
-using Application.Services.Interfaces;
 using Asp.Versioning;
+using IGCSELearningHub.Application.Identity.Devices.DTOs;
+using IGCSELearningHub.Application.Identity.Devices.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using System.Threading;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

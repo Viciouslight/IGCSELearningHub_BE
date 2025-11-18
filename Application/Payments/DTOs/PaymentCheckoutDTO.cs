@@ -1,5 +1,4 @@
-﻿
-namespace Application.Payments.DTOs
+﻿namespace IGCSELearningHub.Application.Payments.DTOs
 {
     public sealed class PaymentCheckoutDTO
     {

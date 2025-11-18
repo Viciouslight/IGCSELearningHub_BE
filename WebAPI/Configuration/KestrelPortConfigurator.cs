@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-
-namespace WebAPI.Configuration
+﻿namespace IGCSELearningHub.WebAPI.Configuration
 {
     public static class KestrelPortConfigurator
     {

@@ -1,5 +1,5 @@
-﻿using Domain.Enums;
-namespace Application.DTOs.Orders
+﻿using IGCSELearningHub.Domain.Enums;
+namespace IGCSELearningHub.Application.DTOs.Orders
 {
     public class OrderDetailLineDTO
     {

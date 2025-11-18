@@ -1,5 +1,4 @@
-﻿
-namespace Application.Exceptions
+﻿namespace IGCSELearningHub.Application.Exceptions
 {
     public class AppException : Exception
     {

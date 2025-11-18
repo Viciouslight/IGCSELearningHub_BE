@@ -1,10 +1,10 @@
-using Application.DTOs.Assignments;
-using Application.Extensions;
-using Application.Services.Interfaces;
-using Application.Wrappers;
+using IGCSELearningHub.Application.DTOs.Assignments;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class AssignmentStudentService : IAssignmentStudentService
     {

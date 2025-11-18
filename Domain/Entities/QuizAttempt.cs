@@ -1,9 +1,7 @@
-﻿using Domain.Common;
-using Domain.Identity.Accounts;
-using System;
-using System.Collections.Generic;
+﻿using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Identity.Accounts;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class QuizAttempt : BaseFullEntity
 {

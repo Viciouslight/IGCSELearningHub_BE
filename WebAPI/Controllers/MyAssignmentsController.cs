@@ -1,12 +1,11 @@
-﻿using Application.DTOs.Submissions;
-using Application.Services.Interfaces;
-using Asp.Versioning;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.Submissions;
+using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

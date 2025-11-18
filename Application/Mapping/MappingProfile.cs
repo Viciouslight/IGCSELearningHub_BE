@@ -1,13 +1,13 @@
-using Application.DTOs.Accounts;
-using Application.Authentication.DTOs;
-using Application.DTOs.Devices;
-using Application.DTOs.Quiz;
 using AutoMapper;
-using Domain.Entities;
-using System;
-using System.Linq;
+using IGCSELearningHub.Application.DTOs.Quiz;
+using IGCSELearningHub.Application.Identity.Accounts.DTOs;
+using IGCSELearningHub.Application.Identity.Authentication.DTOs;
+using IGCSELearningHub.Application.Identity.Devices.DTOs;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Devices;
 
-namespace Application.Mapping
+namespace IGCSELearningHub.Application.Mapping
 {
     public class MappingProfile : Profile
     {

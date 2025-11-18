@@ -1,5 +1,4 @@
-﻿
-namespace Infrastructure.Payments.Options
+﻿namespace IGCSELearningHub.Infrastructure.Payments.Options
 {
     public class VnPayOptions
     {

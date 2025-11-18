@@ -1,7 +1,7 @@
-﻿using Application.Constants;
+﻿using IGCSELearningHub.Application.Constants;
 using System.ComponentModel.DataAnnotations;
 
-namespace Application.DTOs
+namespace IGCSELearningHub.Application.DTOs
 {
     public class PaginationFilter
     {

@@ -1,12 +1,8 @@
-using Application.Notifications;
 using FirebaseAdmin.Messaging;
+using IGCSELearningHub.Application.Notifications;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Infrastructure.Notifications
+namespace IGCSELearningHub.Infrastructure.Notifications
 {
     public class FirebaseNotificationPublisher : IPushNotificationService
     {

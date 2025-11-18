@@ -1,6 +1,6 @@
-﻿using Domain.Enums;
+﻿using IGCSELearningHub.Domain.Enums;
 
-namespace Application.DTOs.Enrollments
+namespace IGCSELearningHub.Application.DTOs.Enrollments
 {
     public class MyEnrollmentItemDTO
     {

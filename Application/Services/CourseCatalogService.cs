@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Application.Extensions;
+﻿using IGCSELearningHub.Application.DTOs.Courses;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Application.DTOs.Courses;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class CourseCatalogService : ICourseCatalogService
     {

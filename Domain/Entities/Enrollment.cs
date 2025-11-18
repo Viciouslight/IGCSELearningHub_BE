@@ -1,8 +1,8 @@
-﻿using Domain.Common;
-using Domain.Enums;
-using Domain.Identity.Accounts;
+﻿using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Identity.Accounts;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class Enrollment : BaseFullEntity
 {

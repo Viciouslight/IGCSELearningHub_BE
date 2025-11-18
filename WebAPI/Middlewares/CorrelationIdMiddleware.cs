@@ -1,6 +1,6 @@
 ﻿using Serilog.Context;
 
-namespace WebAPI.Middlewares
+namespace IGCSELearningHub.WebAPI.Middlewares
 {
     public class CorrelationIdMiddleware
     {

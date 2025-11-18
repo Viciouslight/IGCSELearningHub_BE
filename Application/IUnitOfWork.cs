@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application.IRepository;
+﻿using IGCSELearningHub.Application.IRepository;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Application
+namespace IGCSELearningHub.Application
 {
     public interface IUnitOfWork
     {
@@ -24,7 +19,7 @@ namespace Application
         ILessonRepository LessonRepository { get; }
         IUnitRepository UnitRepository { get; }
         ILessonCompletionRepository LessonCompletionRepository { get; }
-        ILivestreamRegistrationRepository LivestreamRegistrationRepository  { get; }
+        ILivestreamRegistrationRepository LivestreamRegistrationRepository { get; }
         ILivestreamRepository LivestreamRepository { get; }
         IOrderDetailRepository OrderDetailRepository { get; }
         IOrderRepository OrderRepository { get; }
@@ -34,7 +29,7 @@ namespace Application
         ISubmissionRepository SubmissionRepository { get; }
         IRefreshTokenRepository RefreshTokenRepository { get; }
         IDeviceRepository DeviceRepository { get; }
-        
+
 
         public Task<int> SaveChangesAsync();
         IDbContextTransaction BeginTransaction();

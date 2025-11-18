@@ -1,4 +1,4 @@
-namespace Application.Utils
+namespace IGCSELearningHub.Application.Utils
 {
     public class EmailOptions
     {

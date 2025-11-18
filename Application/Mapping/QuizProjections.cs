@@ -1,9 +1,8 @@
-using Application.DTOs.Quiz;
-using Domain.Entities;
-using System;
+using IGCSELearningHub.Application.DTOs.Quiz;
+using IGCSELearningHub.Domain.Entities;
 using System.Linq.Expressions;
 
-namespace Application.Mapping
+namespace IGCSELearningHub.Application.Mapping
 {
     public static class QuizProjections
     {

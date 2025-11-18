@@ -1,4 +1,4 @@
-﻿namespace Application.DTOs.Payments
+﻿namespace IGCSELearningHub.Application.DTOs.Payments
 {
     public class PaymentMethodDTO
     {

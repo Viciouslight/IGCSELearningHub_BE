@@ -1,4 +1,4 @@
-namespace Application.DTOs.Livestreams
+namespace IGCSELearningHub.Application.DTOs.Livestreams
 {
     public class LivestreamPublicDetailDTO
     {

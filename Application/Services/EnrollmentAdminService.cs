@@ -1,14 +1,14 @@
-using Application.Services.Interfaces;
-using Application.Utils.Interfaces;
-using Application.Extensions;
-using Application.Wrappers;
-using Domain.Entities;
-using Domain.Enums;
+using IGCSELearningHub.Application.DTOs.Enrollments;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Utils.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Application.DTOs.Enrollments;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class EnrollmentAdminService : IEnrollmentAdminService
     {

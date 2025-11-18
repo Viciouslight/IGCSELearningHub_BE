@@ -1,8 +1,6 @@
-﻿using Domain.Common;
-using System;
-using System.Collections.Generic;
+﻿using IGCSELearningHub.Domain.Common;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class QuizQuestion : BaseFullEntity
 {

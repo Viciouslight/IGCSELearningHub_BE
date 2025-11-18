@@ -1,4 +1,4 @@
-﻿namespace Domain.Identity.Accounts;
+﻿namespace IGCSELearningHub.Domain.Identity.Accounts;
 
 public enum AccountRole
 {

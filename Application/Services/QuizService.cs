@@ -1,16 +1,16 @@
-﻿using Application.Services.Interfaces;
-using Application.Wrappers;
-using Application.Extensions;
-using AutoMapper;
+﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Domain.Entities;
-using Microsoft.Extensions.Logging;
+using IGCSELearningHub.Application.DTOs.Quiz;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Mapping;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Application.DTOs.Quiz;
-using Application.Mapping;
+using Microsoft.Extensions.Logging;
 
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class QuizService : IQuizService
     {

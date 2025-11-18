@@ -1,8 +1,8 @@
-﻿using Domain.Common;
-using Domain.Entities;
-using Domain.Identity.Devices;
+﻿using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Identity.Devices;
 
-namespace Domain.Identity.Accounts;
+namespace IGCSELearningHub.Domain.Identity.Accounts;
 
 public partial class Account : BaseFullEntity
 {

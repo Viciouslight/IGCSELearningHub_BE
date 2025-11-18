@@ -1,9 +1,9 @@
-﻿using Application.Utils;
+﻿using IGCSELearningHub.Application.Utils;
 using Serilog.Context;
 using System.Diagnostics;
 using System.Text;
 
-namespace WebAPI.Middlewares
+namespace IGCSELearningHub.WebAPI.Middlewares
 {
     public class RequestResponseLoggingMiddleware
     {

@@ -1,7 +1,4 @@
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Utils.Interfaces
+namespace IGCSELearningHub.Application.Utils.Interfaces
 {
     public interface IEmailSender
     {

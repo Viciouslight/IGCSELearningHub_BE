@@ -1,11 +1,10 @@
-using System.Linq;
-using Application.DTOs.Units;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Domain.Entities;
+using IGCSELearningHub.Application.DTOs.Units;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class UnitService : IUnitService
     {

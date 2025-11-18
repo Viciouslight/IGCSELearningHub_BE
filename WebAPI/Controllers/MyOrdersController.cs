@@ -1,17 +1,16 @@
-﻿using Application.DTOs.Orders;
-using Application.Payments.DTOs;
-using Application.Payments.Interfaces;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Asp.Versioning;
+﻿using Asp.Versioning;
+using IGCSELearningHub.Application.DTOs.Orders;
+using IGCSELearningHub.Application.Payments.DTOs;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Security.Claims;
-using Domain.Enums;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Security.Claims;
 
-namespace WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

@@ -1,6 +1,4 @@
-using System.Collections.Generic;
-
-namespace Application.DTOs.Courses
+namespace IGCSELearningHub.Application.DTOs.Courses
 {
     public class CourseUnitOutlineDTO
     {

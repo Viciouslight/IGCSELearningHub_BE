@@ -1,7 +1,7 @@
-﻿using Domain.Common;
-using Domain.Enums;
+﻿using IGCSELearningHub.Domain.Common;
+using IGCSELearningHub.Domain.Enums;
 
-namespace Domain.Entities;
+namespace IGCSELearningHub.Domain.Entities;
 
 public partial class OrderDetail : BaseFullEntity
 {

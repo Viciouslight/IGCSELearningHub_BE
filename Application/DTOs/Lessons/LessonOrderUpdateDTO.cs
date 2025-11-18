@@ -1,4 +1,4 @@
-namespace Application.DTOs.Lessons
+namespace IGCSELearningHub.Application.DTOs.Lessons
 {
     public class LessonOrderUpdateDTO
     {

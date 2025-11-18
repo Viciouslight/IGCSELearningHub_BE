@@ -1,18 +1,15 @@
-using Application.DTOs.Analytics;
-using Application.Extensions;
-using Application.Services.Interfaces;
-using Application.Wrappers;
-using Application.Utils.Interfaces;
-using Application.Utils;
-using Domain.Entities;
-using Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using IGCSELearningHub.Application.DTOs.Analytics;
+using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Utils;
+using IGCSELearningHub.Application.Utils.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Services
+namespace IGCSELearningHub.Application.Services
 {
     public class AnalyticsService : IAnalyticsService
     {

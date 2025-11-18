@@ -1,16 +1,15 @@
-using System.Linq;
-using Application.Payments.DTOs;
-using Application.Payments.Helpers;
-using Application.Payments.Interfaces;
-using Application.Services.Interfaces;
-using Application.Utils.Interfaces;
-using Application.Wrappers;
-using Domain.Entities;
-using Domain.Enums;
+using IGCSELearningHub.Application.Payments.DTOs;
+using IGCSELearningHub.Application.Payments.Helpers;
+using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Utils.Interfaces;
+using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Payments.Services
+namespace IGCSELearningHub.Application.Payments.Services
 {
     public class CashPaymentService : ICashPaymentService
     {
