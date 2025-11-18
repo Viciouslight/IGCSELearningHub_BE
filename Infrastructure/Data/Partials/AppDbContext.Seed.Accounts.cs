@@ -1,4 +1,5 @@
-using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Entities;
+using IGCSELearningHub.Domain.Identity.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data

@@ -1,7 +1,7 @@
 ﻿using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Enums;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;

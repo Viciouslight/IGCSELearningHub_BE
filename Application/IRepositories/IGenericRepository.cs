@@ -1,0 +1,17 @@
+﻿using IGCSELearningHub.Domain.Common;
+using System.Linq.Expressions;
+
+namespace IGCSELearningHub.Application.IRepositories
+{
+    public interface IGenericRepository<TModel> where TModel : BaseFullEntity
+    {
+        Task AddAsync(TModel model);
+        void Update(TModel model);
+        void HardDelete(TModel model);
+        void SoftDelete(TModel model);
+        Task<IEnumerable<TModel>> GetAllAsync();
+        Task<TModel> GetByIdAsync(int id);
+        IQueryable<TModel> GetAllQueryable(string includeProperties = "");
+        Task<TModel> FindOneAsync(Expression<Func<TModel, bool>> predicate, string includeProperties = "");
+    }
+}

@@ -1,8 +1,7 @@
 using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
-using IGCSELearningHub.Application.IRepository;
-using IGCSELearningHub.Infrastructure.Identity.Accounts;
+using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Infrastructure.Identity.Authentication;
-using IGCSELearningHub.Infrastructure.Identity.Devices;
+using IGCSELearningHub.Infrastructure.Identity.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IGCSELearningHub.Infrastructure.Identity;

@@ -1,7 +1,5 @@
 ﻿using IGCSELearningHub.Domain.Entities;
-using IGCSELearningHub.Domain.Identity.Accounts;
-using IGCSELearningHub.Domain.Identity.Authentication;
-using IGCSELearningHub.Domain.Identity.Devices;
+using IGCSELearningHub.Domain.Identity.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;

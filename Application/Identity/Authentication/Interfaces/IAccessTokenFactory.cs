@@ -1,5 +1,5 @@
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Enums;
 
 namespace IGCSELearningHub.Application.Identity.Authentication.Interfaces
 {

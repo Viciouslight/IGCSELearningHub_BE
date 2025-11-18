@@ -1,5 +1,5 @@
 ﻿using IGCSELearningHub.Application;
-using IGCSELearningHub.Application.IRepository;
+using IGCSELearningHub.Application.IRepositories;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore.Storage;
 

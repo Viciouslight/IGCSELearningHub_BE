@@ -1,5 +1,5 @@
 using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
-using IGCSELearningHub.Domain.Identity.Authentication;
+using IGCSELearningHub.Domain.Identity.Entities;
 
 namespace IGCSELearningHub.Application.Identity.Authentication.Services
 {

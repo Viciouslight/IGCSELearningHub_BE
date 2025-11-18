@@ -1,4 +1,4 @@
-﻿using IGCSELearningHub.Application.IRepository;
+﻿using IGCSELearningHub.Application.IRepositories;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace IGCSELearningHub.Application

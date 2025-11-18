@@ -2,7 +2,7 @@
 using IGCSELearningHub.Application.Identity.Authentication.DTOs;
 using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Entities;
 using Microsoft.Extensions.Logging;
 using System.Text.RegularExpressions;
 

@@ -4,8 +4,7 @@ using IGCSELearningHub.Application.Identity.Accounts.DTOs;
 using IGCSELearningHub.Application.Identity.Authentication.DTOs;
 using IGCSELearningHub.Application.Identity.Devices.DTOs;
 using IGCSELearningHub.Domain.Entities;
-using IGCSELearningHub.Domain.Identity.Accounts;
-using IGCSELearningHub.Domain.Identity.Devices;
+using IGCSELearningHub.Domain.Identity.Entities;
 
 namespace IGCSELearningHub.Application.Mapping
 {

@@ -1,6 +1,6 @@
 using IGCSELearningHub.Application.Identity.Authentication.DTOs;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Entities;
 
 namespace IGCSELearningHub.Application.Identity.Authentication.Interfaces
 {

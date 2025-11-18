@@ -1,9 +1,9 @@
 using AutoMapper;
 using IGCSELearningHub.Application.Identity.Devices.DTOs;
 using IGCSELearningHub.Application.Identity.Devices.Interfaces;
-using IGCSELearningHub.Application.IRepository;
+using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Identity.Devices;
+using IGCSELearningHub.Domain.Identity.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

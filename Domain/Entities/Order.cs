@@ -1,6 +1,6 @@
 ﻿using IGCSELearningHub.Domain.Common;
 using IGCSELearningHub.Domain.Enums;
-using IGCSELearningHub.Domain.Identity.Accounts;
+using IGCSELearningHub.Domain.Identity.Entities;
 
 namespace IGCSELearningHub.Domain.Entities;
 
