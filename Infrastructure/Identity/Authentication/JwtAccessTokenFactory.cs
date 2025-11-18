@@ -1,4 +1,4 @@
-﻿using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
+using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Identity.Enums;
@@ -9,22 +9,28 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace IGCSELearningHub.Application.Identity.Authentication.Services
+namespace IGCSELearningHub.Infrastructure.Identity.Authentication
 {
-    public class AccessTokenFactory : IAccessTokenFactory
+    public class JwtAccessTokenFactory : IAccessTokenFactory
     {
         private readonly IConfiguration _configuration;
         private readonly IDateTimeProvider _dateTimeProvider;
-        private readonly ILogger<AccessTokenFactory> _logger;
+        private readonly ILogger<JwtAccessTokenFactory> _logger;
 
-        public AccessTokenFactory(IConfiguration configuration, IDateTimeProvider dateTimeProvider, ILogger<AccessTokenFactory> logger)
+        public JwtAccessTokenFactory(
+            IConfiguration configuration,
+            IDateTimeProvider dateTimeProvider,
+            ILogger<JwtAccessTokenFactory> logger)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _dateTimeProvider = dateTimeProvider ?? throw new ArgumentNullException(nameof(dateTimeProvider));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public ApiResult<string> GenerateJwtToken(int accountId, string accountUserName, AccountRole role, string? accountStatus)
+        public ApiResult<string> GenerateAccessToken(int accountId, string accountUserName, AccountRole role, string? accountStatus)
+            => GenerateJwtToken(accountId, accountUserName, role, accountStatus);
+
+        private ApiResult<string> GenerateJwtToken(int accountId, string accountUserName, AccountRole role, string? accountStatus)
         {
             var roleString = role.ToString();
 
@@ -69,8 +75,5 @@ namespace IGCSELearningHub.Application.Identity.Authentication.Services
 
             return ApiResult<string>.Success(new JwtSecurityTokenHandler().WriteToken(token));
         }
-
-        public ApiResult<string> GenerateAccessToken(int accountId, string accountUserName, AccountRole role, string? accountStatus)
-            => GenerateJwtToken(accountId, accountUserName, role, accountStatus);
     }
 }

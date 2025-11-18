@@ -16,6 +16,7 @@ public static class IdentityInfrastructureModule
         services.AddScoped<IDeviceRepository, DeviceRepository>();
         services.AddSingleton<IExternalAuthProvider, FirebaseExternalAuthProvider>();
         services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
+        services.AddScoped<IAccessTokenFactory, JwtAccessTokenFactory>();
         return services;
     }
 }

@@ -9,7 +9,6 @@ public static class AuthenticationModule
     public static IServiceCollection AddAuthenticationModule(this IServiceCollection services)
     {
         services.AddScoped<IAuthenticationService, AuthenticationService>();
-        services.AddScoped<IAccessTokenFactory, AccessTokenFactory>();
         services.AddScoped<IRefreshTokenManager, RefreshTokenManager>();
         services.AddScoped<ITokenService, TokenService>();
 
