@@ -6,6 +6,8 @@ using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Payments.Entities;
+using IGCSELearningHub.Domain.Payments.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

@@ -1,4 +1,4 @@
-using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Payments.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

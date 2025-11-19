@@ -4,7 +4,7 @@ using IGCSELearningHub.Application.Payments.DTOs;
 using IGCSELearningHub.Application.Payments.Interfaces;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Payments.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;

@@ -1,5 +1,6 @@
 ﻿using IGCSELearningHub.Application.Payments.DTOs;
 using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Domain.Payments.Enums;
 using IGCSELearningHub.Infrastructure.Payments.Options;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
@@ -104,7 +105,7 @@ namespace IGCSELearningHub.Infrastructure.Payments.Providers.VnPay
                 RawQuery = query.ToString(),
                 Amount = amountVnd,
                 Currency = "VND",
-                Status = ok ? Domain.Enums.PaymentStatus.Paid : Domain.Enums.PaymentStatus.Canceled,
+                Status = ok ? PaymentStatus.Paid : PaymentStatus.Canceled,
                 OrderId = orderId
             };
             return Task.FromResult(result);

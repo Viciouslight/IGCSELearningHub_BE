@@ -1,6 +1,6 @@
 using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Application.Utils.Interfaces;
-using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Payments.Entities;
 using Infrastructure.Data;
 
 namespace IGCSELearningHub.Infrastructure.Repositories

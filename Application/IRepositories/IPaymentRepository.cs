@@ -1,4 +1,4 @@
-﻿using IGCSELearningHub.Domain.Entities;
+﻿using IGCSELearningHub.Domain.Payments.Entities;
 
 namespace IGCSELearningHub.Application.IRepositories
 {

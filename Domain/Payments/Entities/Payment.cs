@@ -1,7 +1,8 @@
 ﻿using IGCSELearningHub.Domain.Common;
-using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Payments.Enums;
 
-namespace IGCSELearningHub.Domain.Entities;
+namespace IGCSELearningHub.Domain.Payments.Entities;
 
 public partial class Payment : BaseFullEntity
 {

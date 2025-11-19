@@ -1,6 +1,7 @@
 ﻿using IGCSELearningHub.Domain.Common;
 using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Identity.Entities;
+using IGCSELearningHub.Domain.Payments.Entities;
 
 namespace IGCSELearningHub.Domain.Entities;
 

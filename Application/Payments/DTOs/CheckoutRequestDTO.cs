@@ -1,4 +1,4 @@
-﻿using IGCSELearningHub.Domain.Enums;
+﻿using IGCSELearningHub.Domain.Payments.Enums;
 
 namespace IGCSELearningHub.Application.Payments.DTOs
 {

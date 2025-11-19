@@ -1,6 +1,6 @@
 ﻿using IGCSELearningHub.Domain.Common;
 
-namespace IGCSELearningHub.Domain.Entities;
+namespace IGCSELearningHub.Domain.Payments.Entities;
 
 public partial class PaymentMethod : BaseFullEntity
 {
