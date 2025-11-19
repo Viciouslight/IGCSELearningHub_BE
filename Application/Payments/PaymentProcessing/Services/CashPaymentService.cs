@@ -1,6 +1,6 @@
-using IGCSELearningHub.Application.Payments.DTOs;
-using IGCSELearningHub.Application.Payments.Interfaces;
 using IGCSELearningHub.Application.Payments.PaymentMethods.Helpers;
+using IGCSELearningHub.Application.Payments.PaymentProcessing.DTOs;
+using IGCSELearningHub.Application.Payments.PaymentProcessing.Interfaces;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
@@ -11,7 +11,7 @@ using IGCSELearningHub.Domain.Payments.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace IGCSELearningHub.Application.Payments.Services
+namespace IGCSELearningHub.Application.Payments.PaymentProcessing.Services
 {
     public class CashPaymentService : ICashPaymentService
     {

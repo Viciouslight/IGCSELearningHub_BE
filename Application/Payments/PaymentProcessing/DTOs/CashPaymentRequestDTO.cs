@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace IGCSELearningHub.Application.Payments.DTOs
+namespace IGCSELearningHub.Application.Payments.PaymentProcessing.DTOs
 {
     public class CashPaymentRequestDTO
     {

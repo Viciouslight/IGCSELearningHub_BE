@@ -1,5 +1,6 @@
 ﻿using IGCSELearningHub.Application.Payments.Interfaces;
-using IGCSELearningHub.Application.Payments.Services;
+using IGCSELearningHub.Application.Payments.PaymentProcessing.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentProcessing.Services;
 using IGCSELearningHub.Infrastructure.Payments.Options;
 using IGCSELearningHub.Infrastructure.Payments.Providers;
 using IGCSELearningHub.Infrastructure.Payments.Providers.VnPay;
