@@ -1,12 +1,13 @@
 using AutoMapper;
 using IGCSELearningHub.Application.Identity.Accounts.DTOs;
 using IGCSELearningHub.Application.Identity.Accounts.Interfaces;
+using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Domain.Identity.ValueObjects;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 using System.Text;
-using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 
 namespace IGCSELearningHub.Application.Identity.Accounts.Services
 {
@@ -68,7 +69,7 @@ namespace IGCSELearningHub.Application.Identity.Accounts.Services
             if (dto.NewPassword != dto.ConfirmNewPassword)
                 return ApiResult<string>.Fail("New password and confirmation do not match.", 400);
 
-            account.Password = _passwordHasher.HashPassword(dto.NewPassword);
+            account.Password = HashedPassword.From(_passwordHasher.HashPassword(dto.NewPassword));
 
             _unitOfWork.AccountRepository.Update(account);
             await _unitOfWork.SaveChangesAsync();
@@ -94,7 +95,7 @@ namespace IGCSELearningHub.Application.Identity.Accounts.Services
 
             var originalPassword = account.Password;
             var temporaryPassword = GenerateTemporaryPassword();
-            account.Password = _passwordHasher.HashPassword(temporaryPassword);
+            account.Password = HashedPassword.From(_passwordHasher.HashPassword(temporaryPassword));
 
             _unitOfWork.AccountRepository.Update(account);
             await _unitOfWork.SaveChangesAsync();

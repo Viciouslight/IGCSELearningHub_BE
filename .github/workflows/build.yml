@@ -8,8 +8,8 @@ on:
 
 env:
   DOTNET_VERSION: "8.0.x"
-  SOLUTION_PATH: IGCSE Learning Hub.sln
-  PROJECT_PATH: WebAPI/WebAPI.csproj
+  SOLUTION_PATH: IGCSELearningHub.sln
+  PROJECT_PATH: WebAPI/IGCSELearningHub.WebAPI.csproj
   PUBLISH_DIR: ./publish
 
 jobs:
@@ -33,13 +33,13 @@ jobs:
           restore-keys: ${{ runner.os }}-nuget-
 
       - name: Restore
-        run: dotnet restore ${{ env.PROJECT_PATH }}
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
   
       - name: Build (Release)
-        run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+        run: dotnet build ${{ env.SOLUTION_PATH }} -c Release --no-restore
   
       - name: Test
-        run: dotnet test -c Release --no-build --verbosity normal || true
+        run: dotnet test ${{ env.SOLUTION_PATH }} -c Release --no-build --verbosity normal || true
   
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -o ${{ env.PUBLISH_DIR }} --no-build

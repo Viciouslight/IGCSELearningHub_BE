@@ -3,6 +3,7 @@ using IGCSELearningHub.Application.Identity.Authentication.DTOs;
 using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Identity.Entities;
+using IGCSELearningHub.Domain.Identity.ValueObjects;
 using Microsoft.Extensions.Logging;
 using System.Text.RegularExpressions;
 
@@ -54,7 +55,7 @@ namespace IGCSELearningHub.Application.Identity.Authentication.Services
                 try
                 {
                     var account = _mapper.Map<Account>(registrationDto);
-                    account.Password = _passwordHasher.HashPassword(registrationDto.Password);
+                    account.Password = HashedPassword.From(_passwordHasher.HashPassword(registrationDto.Password));
 
                     await _unitOfWork.AccountRepository.AddAsync(account);
                     await _unitOfWork.SaveChangesAsync();
@@ -85,7 +86,9 @@ namespace IGCSELearningHub.Application.Identity.Authentication.Services
                 return ApiResult<AuthenticatedUserDTO>.Fail("Invalid credentials or account is banned.");
             }
 
-            if (!_passwordHasher.VerifyPassword(loginDto.Password, account.Password))
+            var passwordHash = account.Password?.Value;
+            if (string.IsNullOrWhiteSpace(passwordHash) ||
+                !_passwordHasher.VerifyPassword(loginDto.Password, passwordHash))
             {
                 _logger.LogWarning("Invalid credentials provided.");
                 return ApiResult<AuthenticatedUserDTO>.Fail("Invalid credentials.");

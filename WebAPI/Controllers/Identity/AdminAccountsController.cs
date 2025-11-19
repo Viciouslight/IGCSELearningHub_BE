@@ -30,14 +30,6 @@ namespace IGCSELearningHub.WebAPI.Controllers.Identity
             return StatusCode(result.StatusCode, result);
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetAll()
-        {
-            var result = await _accountService.GetAllAccountsAsync();
-            return StatusCode(result.StatusCode, result);
-        }
-
         [HttpGet("paged")]
         [AllowAnonymous]
         public async Task<IActionResult> GetPaged(

@@ -27,12 +27,6 @@ namespace IGCSELearningHub.Application.Identity.Accounts.Services
             return ApiResult<AccountDTO>.Success(_mapper.Map<AccountDTO>(account), "Account retrieved successfully.");
         }
 
-        public async Task<ApiResult<IEnumerable<AccountDTO>>> GetAllAccountsAsync()
-        {
-            var allAccounts = await _unitOfWork.AccountRepository.GetAllAsync();
-            return ApiResult<IEnumerable<AccountDTO>>.Success(_mapper.Map<IEnumerable<AccountDTO>>(allAccounts), "All accounts retrieved successfully.");
-        }
-
         public async Task<PagedResult<AccountDTO>> GetAccountsPagedAsync(string? q, string? role, string? status, int page, int pageSize, string? sort)
         {
             var query = _unitOfWork.AccountRepository.GetAllQueryable();

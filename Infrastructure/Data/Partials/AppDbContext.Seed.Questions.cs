@@ -8,7 +8,7 @@ namespace Infrastructure.Data
     {
         private static void ConfigureQuestions(ModelBuilder modelBuilder)
         {
-            const int quizzesToSeed = 50;
+            const int quizzesToSeed = 70;
             const int questionsPerQuiz = 5;
             var baseDate = new DateTime(2024, 2, 1, 0, 0, 0, DateTimeKind.Utc);
             var topics = new[]

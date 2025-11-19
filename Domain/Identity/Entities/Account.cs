@@ -1,6 +1,7 @@
 ﻿using IGCSELearningHub.Domain.Common;
 using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Identity.Enums;
+using IGCSELearningHub.Domain.Identity.ValueObjects;
 
 namespace IGCSELearningHub.Domain.Identity.Entities;
 
@@ -12,7 +13,7 @@ public partial class Account : BaseFullEntity
 
     public string Email { get; set; } = null!;
 
-    public string? Password { get; set; }
+    public HashedPassword? Password { get; set; }
 
     public string? PhoneNumber { get; set; }
 

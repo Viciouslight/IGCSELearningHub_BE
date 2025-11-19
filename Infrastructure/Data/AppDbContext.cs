@@ -1,5 +1,6 @@
 ﻿using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Identity.Entities;
+using IGCSELearningHub.Infrastructure.Identity.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
@@ -70,6 +71,8 @@ public partial class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new AccountConfiguration());
+
         // ==== FIX Multiple Cascade Paths ====
 
         // Livestreams -> Accounts (TeacherId): KHÔNG cascade

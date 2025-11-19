@@ -1,4 +1,3 @@
-using System;
 using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 
 namespace IGCSELearningHub.Infrastructure.Security

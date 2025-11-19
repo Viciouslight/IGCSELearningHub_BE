@@ -6,7 +6,7 @@ using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace IGCSELearningHub.Infrastructure.Identity.Repositories
+namespace IGCSELearningHub.Infrastructure.Identity.Persistence.Repositories
 {
     public class AccountRepository : GenericRepository<Account>, IAccountRepository
     {

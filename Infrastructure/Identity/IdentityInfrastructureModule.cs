@@ -1,7 +1,7 @@
 using IGCSELearningHub.Application.Identity.Authentication.Interfaces;
 using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Infrastructure.Identity.Authentication;
-using IGCSELearningHub.Infrastructure.Identity.Repositories;
+using IGCSELearningHub.Infrastructure.Identity.Persistence.Repositories;
 using IGCSELearningHub.Infrastructure.Security;
 using Microsoft.Extensions.DependencyInjection;
 
