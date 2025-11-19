@@ -1,6 +1,6 @@
 using IGCSELearningHub.Application.Payments.DTOs;
-using IGCSELearningHub.Application.Payments.Helpers;
 using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentMethods.Helpers;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;

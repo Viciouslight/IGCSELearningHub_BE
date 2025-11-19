@@ -2,8 +2,8 @@
 using IGCSELearningHub.Application.Identity.Devices.Interfaces;
 using IGCSELearningHub.Application.Notifications;
 using IGCSELearningHub.Application.Payments.DTOs;
-using IGCSELearningHub.Application.Payments.Helpers;
 using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentMethods.Helpers;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Payments.Entities;

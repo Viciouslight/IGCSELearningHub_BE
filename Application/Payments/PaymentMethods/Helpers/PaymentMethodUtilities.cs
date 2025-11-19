@@ -2,7 +2,7 @@ using IGCSELearningHub.Domain.Payments.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace IGCSELearningHub.Application.Payments.Helpers
+namespace IGCSELearningHub.Application.Payments.PaymentMethods.Helpers
 {
     public static class PaymentMethodUtilities
     {

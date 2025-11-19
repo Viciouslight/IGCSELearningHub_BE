@@ -1,7 +1,7 @@
 ﻿using Asp.Versioning;
-using IGCSELearningHub.Application.DTOs.Payments;
 using IGCSELearningHub.Application.Exceptions;
-using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentMethods.DTOs;
+using IGCSELearningHub.Application.Payments.PaymentMethods.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,6 +1,5 @@
 using IGCSELearningHub.Application.Identity;
-using IGCSELearningHub.Application.Payments.Interfaces;
-using IGCSELearningHub.Application.Payments.Services;
+using IGCSELearningHub.Application.Payments;
 using IGCSELearningHub.Application.Services;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Utils;
@@ -39,7 +38,7 @@ namespace IGCSELearningHub.Application
             services.AddScoped<ILivestreamPublicService, LivestreamPublicService>();
             services.AddScoped<ICoursePackagePublicService, CoursePackagePublicService>();
             services.AddScoped<ILessonPublicService, LessonPublicService>();
-            services.AddScoped<IPaymentMethodService, PaymentMethodService>();
+            services.AddPaymentModule();
 
             return services;
         }
