@@ -8,6 +8,8 @@ using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.Interfaces;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.Services;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceValidation.Interfaces;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceValidation.Services;
+using IGCSELearningHub.Application.Orders.Billing.Reconciliation.Interfaces;
+using IGCSELearningHub.Application.Orders.Billing.Reconciliation.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IGCSELearningHub.Application.Orders.Billing;
@@ -21,6 +23,7 @@ public static class BillingModule
         services.AddScoped<IInvoiceNumberGenerator, InvoiceNumberGenerator>();
         services.AddScoped<IInvoiceValidationService, InvoiceValidationService>();
         services.AddScoped<ICreditNoteService, CreditNoteService>();
+        services.AddScoped<IReconciliationService, ReconciliationService>();
         return services;
     }
 }
