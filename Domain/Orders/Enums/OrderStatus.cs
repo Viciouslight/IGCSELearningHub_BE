@@ -1,4 +1,4 @@
-﻿namespace IGCSELearningHub.Domain.Enums
+﻿namespace IGCSELearningHub.Domain.Orders.Enums
 {
     public enum OrderStatus
     {

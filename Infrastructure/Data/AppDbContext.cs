@@ -1,5 +1,6 @@
 ﻿using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Identity.Entities;
+using IGCSELearningHub.Domain.Orders.Entities;
 using IGCSELearningHub.Domain.Payments.Entities;
 using IGCSELearningHub.Infrastructure.Identity.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;

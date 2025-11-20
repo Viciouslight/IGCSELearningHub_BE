@@ -1,4 +1,6 @@
-﻿namespace IGCSELearningHub.Application.DTOs.Orders
+﻿using IGCSELearningHub.Application.DTOs.Orders;
+
+namespace IGCSELearningHub.Application.Orders.OrderPlacement.DTOs
 {
     public class CreateOrderRequest
     {

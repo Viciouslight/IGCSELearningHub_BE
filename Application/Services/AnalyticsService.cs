@@ -6,6 +6,8 @@ using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Orders.Entities;
+using IGCSELearningHub.Domain.Orders.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

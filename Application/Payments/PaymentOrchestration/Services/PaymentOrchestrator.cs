@@ -5,7 +5,7 @@ using IGCSELearningHub.Application.Payments.PaymentMethods.Helpers;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using IGCSELearningHub.Application.Services.Interfaces;
-using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Orders.Enums;
 using IGCSELearningHub.Domain.Payments.Entities;
 using IGCSELearningHub.Domain.Payments.Enums;
 using Microsoft.AspNetCore.Http;

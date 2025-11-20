@@ -1,9 +1,10 @@
 using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Application.Utils.Interfaces;
-using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Orders.Entities;
+using IGCSELearningHub.Infrastructure.Repositories;
 using Infrastructure.Data;
 
-namespace IGCSELearningHub.Infrastructure.Repositories
+namespace IGCSELearningHub.Infrastructure.Orders.Repositories
 {
     public class OrderRepository : GenericRepository<Order>, IOrderRepository
     {

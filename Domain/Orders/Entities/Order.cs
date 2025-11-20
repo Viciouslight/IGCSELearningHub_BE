@@ -1,9 +1,9 @@
 ﻿using IGCSELearningHub.Domain.Common;
-using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Identity.Entities;
+using IGCSELearningHub.Domain.Orders.Enums;
 using IGCSELearningHub.Domain.Payments.Entities;
 
-namespace IGCSELearningHub.Domain.Entities;
+namespace IGCSELearningHub.Domain.Orders.Entities;
 
 public partial class Order : BaseFullEntity
 {

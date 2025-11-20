@@ -1,10 +1,12 @@
 ﻿using IGCSELearningHub.Application.DTOs.Orders;
 using IGCSELearningHub.Application.Extensions;
+using IGCSELearningHub.Application.Orders.OrderPlacement.DTOs;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Enums;
+using IGCSELearningHub.Domain.Orders.Entities;
+using IGCSELearningHub.Domain.Orders.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

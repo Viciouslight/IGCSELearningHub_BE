@@ -1,7 +1,7 @@
 ﻿using IGCSELearningHub.Application.DTOs.Orders;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
-using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Orders.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace IGCSELearningHub.Application.Services

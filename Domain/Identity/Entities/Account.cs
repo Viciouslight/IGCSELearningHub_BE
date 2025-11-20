@@ -2,6 +2,7 @@
 using IGCSELearningHub.Domain.Entities;
 using IGCSELearningHub.Domain.Identity.Enums;
 using IGCSELearningHub.Domain.Identity.ValueObjects;
+using IGCSELearningHub.Domain.Orders.Entities;
 
 namespace IGCSELearningHub.Domain.Identity.Entities;
 

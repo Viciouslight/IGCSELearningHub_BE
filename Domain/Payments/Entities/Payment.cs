@@ -1,5 +1,5 @@
 ﻿using IGCSELearningHub.Domain.Common;
-using IGCSELearningHub.Domain.Entities;
+using IGCSELearningHub.Domain.Orders.Entities;
 using IGCSELearningHub.Domain.Payments.Enums;
 
 namespace IGCSELearningHub.Domain.Payments.Entities;
