@@ -36,6 +36,10 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
+    public virtual DbSet<Invoice> Invoices { get; set; }
+
+    public virtual DbSet<InvoiceLine> InvoiceLines { get; set; }
+
     public virtual DbSet<Payment> Payments { get; set; }
 
     public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
@@ -270,6 +274,23 @@ public partial class AppDbContext : DbContext
             .HasOne(od => od.Order)
             .WithMany(o => o.OrderDetails)
             .HasForeignKey(od => od.OrderId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // Invoices -> Orders; InvoiceLines -> Invoices
+        modelBuilder.Entity<Invoice>()
+            .HasOne(inv => inv.Order)
+            .WithMany(o => o.Invoices)
+            .HasForeignKey(inv => inv.OrderId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Invoice>()
+            .HasIndex(inv => inv.InvoiceNumber)
+            .IsUnique();
+
+        modelBuilder.Entity<InvoiceLine>()
+            .HasOne(line => line.Invoice)
+            .WithMany(inv => inv.Lines)
+            .HasForeignKey(line => line.InvoiceId)
             .OnDelete(DeleteBehavior.Cascade);
 
         // Payments -> Orders/PaymentMethods: cascade

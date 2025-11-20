@@ -27,6 +27,8 @@ namespace IGCSELearningHub.Infrastructure
         public readonly ILivestreamRepository _livestreamRepository;
         public readonly IOrderDetailRepository _orderDetailRepository;
         public readonly IOrderRepository _orderRepository;
+        public readonly IInvoiceRepository _invoiceRepository;
+        public readonly IInvoiceLineRepository _invoiceLineRepository;
         public readonly IPaymentRepository _paymentRepository;
         public readonly IPaymentMethodRepository _paymentMethodRepository;
         public readonly IProgressRepository _progressRepository;
@@ -52,6 +54,8 @@ namespace IGCSELearningHub.Infrastructure
         public ILivestreamRepository LivestreamRepository => _livestreamRepository;
         public IOrderDetailRepository OrderDetailRepository => _orderDetailRepository;
         public IOrderRepository OrderRepository => _orderRepository;
+        public IInvoiceRepository InvoiceRepository => _invoiceRepository;
+        public IInvoiceLineRepository InvoiceLineRepository => _invoiceLineRepository;
         public IPaymentRepository PaymentRepository => _paymentRepository;
         public IPaymentMethodRepository PaymentMethodRepository => _paymentMethodRepository;
         public IProgressRepository ProgressRepository => _progressRepository;
@@ -78,6 +82,8 @@ namespace IGCSELearningHub.Infrastructure
             ILivestreamRepository livestreamRepository,
             IOrderDetailRepository orderDetailRepository,
             IOrderRepository orderRepository,
+            IInvoiceRepository invoiceRepository,
+            IInvoiceLineRepository invoiceLineRepository,
             IPaymentRepository paymentRepository,
             IPaymentMethodRepository paymentMethodRepository,
             IProgressRepository progressRepository,
@@ -105,6 +111,8 @@ namespace IGCSELearningHub.Infrastructure
             _livestreamRepository = livestreamRepository;
             _orderDetailRepository = orderDetailRepository;
             _orderRepository = orderRepository;
+            _invoiceRepository = invoiceRepository;
+            _invoiceLineRepository = invoiceLineRepository;
             _paymentMethodRepository = paymentMethodRepository;
             _paymentRepository = paymentRepository;
             _progressRepository = progressRepository;

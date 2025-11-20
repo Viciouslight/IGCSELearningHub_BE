@@ -23,6 +23,8 @@ namespace IGCSELearningHub.Application
         ILivestreamRepository LivestreamRepository { get; }
         IOrderDetailRepository OrderDetailRepository { get; }
         IOrderRepository OrderRepository { get; }
+        IInvoiceRepository InvoiceRepository { get; }
+        IInvoiceLineRepository InvoiceLineRepository { get; }
         IPaymentRepository PaymentRepository { get; }
         IPaymentMethodRepository PaymentMethodRepository { get; }
         IProgressRepository ProgressRepository { get; }

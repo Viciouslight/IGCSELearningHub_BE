@@ -1,5 +1,6 @@
 using IGCSELearningHub.Domain.Identity.Entities;
 using IGCSELearningHub.Domain.Identity.Enums;
+using IGCSELearningHub.Domain.Identity.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
@@ -53,7 +54,7 @@ namespace Infrastructure.Data
                     account.UserName,
                     account.FullName,
                     account.Email,
-                    Password = passwordHash,
+                    Password = HashedPassword.From(passwordHash),
                     PhoneNumber = account.Phone,
                     Role = account.Role,
                     Gender = account.Gender,

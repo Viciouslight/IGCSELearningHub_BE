@@ -107,6 +107,8 @@ namespace IGCSELearningHub.Infrastructure
             services.AddScoped<ILivestreamRepository, LivestreamRepository>();
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            services.AddScoped<IInvoiceLineRepository, InvoiceLineRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
             services.AddScoped<IProgressRepository, ProgressRepository>();
