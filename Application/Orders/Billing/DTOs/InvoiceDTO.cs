@@ -1,7 +1,7 @@
 ﻿using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Orders.Enums;
 
-namespace IGCSELearningHub.Application.Orders.Invoices.DTOs
+namespace IGCSELearningHub.Application.Orders.Billing.DTOs
 {
     public class InvoiceLineDTO
     {
@@ -24,6 +24,9 @@ namespace IGCSELearningHub.Application.Orders.Invoices.DTOs
         public decimal Subtotal { get; set; }
         public decimal TaxAmount { get; set; }
         public decimal Total { get; set; }
+        public bool IsCreditNote { get; set; }
+        public string? ReferenceInvoiceNumber { get; set; }
+        public string? Notes { get; set; }
         public string? BuyerName { get; set; }
         public string? BuyerTaxCode { get; set; }
         public string? BuyerAddress { get; set; }

@@ -1,4 +1,4 @@
-using IGCSELearningHub.Application.Orders.Invoices;
+using IGCSELearningHub.Application.Orders.Billing;
 using IGCSELearningHub.Application.Orders.Ordering;
 using Microsoft.Extensions.DependencyInjection;
 

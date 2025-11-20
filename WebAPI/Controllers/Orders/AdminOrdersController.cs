@@ -6,7 +6,7 @@ using IGCSELearningHub.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IGCSELearningHub.WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers.Orders
 {
     [ApiController]
     [ApiVersion("1.0")]

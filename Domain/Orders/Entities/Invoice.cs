@@ -19,6 +19,12 @@ public class Invoice : BaseFullEntity
 
     public InvoiceStatus Status { get; set; } = InvoiceStatus.Issued;
 
+    public bool IsCreditNote { get; set; } = false;
+
+    public string? ReferenceInvoiceNumber { get; set; }
+
+    public string? Notes { get; set; }
+
     public string? BuyerName { get; set; }
 
     public string? BuyerTaxCode { get; set; }

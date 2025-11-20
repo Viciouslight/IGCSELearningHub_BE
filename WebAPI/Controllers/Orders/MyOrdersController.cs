@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Security.Claims;
 
-namespace IGCSELearningHub.WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers.Orders
 {
     [ApiController]
     [ApiVersion("1.0")]
