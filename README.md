@@ -107,6 +107,10 @@ Tokens are stored per account and used for payment notifications/push. Call `syn
 
 ## Payments (VNPay)
 - ReturnUrl (versioned, lowercase): `https://<host>/api/v1/vnpay/callback`
+- Layering:
+  - Application: `PaymentMethodsModule` (manage payment methods), `PaymentProcessingModule` (cash/offline processors), `PaymentOrchestrationModule` (create checkout + apply business rules), `PaymentCallbacksModule` (adapter to parse/validate callback shareable across gateways).
+  - Infrastructure: `PaymentsInfrastructureModule` registers gateway/parser implementations (`IPaymentGateway`, `IPaymentCallbackParser`) and binds VNPay options.
+  - WebAPI: controllers consume `IPaymentOrchestrator` and `IPaymentMethodService` only.
 - Callback handling is idempotent; repeated callbacks will not duplicate payments.
 - After VNPay callback succeeds, server auto-enrolls the order and
   - Sends Firebase push “Thanh toán thành công, khóa học đã được mở” to all active devices for that user (make sure each client calls the device sync API so tokens exist).

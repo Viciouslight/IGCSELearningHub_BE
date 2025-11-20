@@ -1,14 +1,15 @@
 using IGCSELearningHub.Application.IRepositories;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Domain.Payments.Entities;
+using IGCSELearningHub.Infrastructure.Repositories;
 using Infrastructure.Data;
 
-namespace IGCSELearningHub.Infrastructure.Repositories
+namespace IGCSELearningHub.Infrastructure.Payments.Repositories
 {
-    public class PaymentMethodRepository : GenericRepository<PaymentMethod>, IPaymentMethodRepository
+    public class PaymentRepository : GenericRepository<Payment>, IPaymentRepository
     {
         private readonly AppDbContext _appDbContext;
-        public PaymentMethodRepository(AppDbContext dbContext, IDateTimeProvider clock) : base(dbContext, clock)
+        public PaymentRepository(AppDbContext dbContext, IDateTimeProvider clock) : base(dbContext, clock)
         {
             _appDbContext = dbContext;
         }

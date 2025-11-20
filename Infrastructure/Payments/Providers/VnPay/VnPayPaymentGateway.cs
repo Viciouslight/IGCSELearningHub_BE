@@ -1,5 +1,5 @@
-﻿using IGCSELearningHub.Application.Payments.DTOs;
-using IGCSELearningHub.Application.Payments.Interfaces;
+﻿using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using IGCSELearningHub.Domain.Payments.Enums;
 using IGCSELearningHub.Infrastructure.Payments.Options;
 using Microsoft.AspNetCore.Http;

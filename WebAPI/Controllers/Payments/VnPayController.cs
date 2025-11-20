@@ -1,5 +1,5 @@
 ﻿using Asp.Versioning;
-using IGCSELearningHub.Application.Payments.DTOs;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Payments.Enums;

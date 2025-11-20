@@ -1,6 +1,6 @@
-using IGCSELearningHub.Application.Payments.DTOs;
-using IGCSELearningHub.Application.Payments.Interfaces;
 using IGCSELearningHub.Application.Payments.PaymentCallbacks.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using Microsoft.AspNetCore.Http;
 
 namespace IGCSELearningHub.Application.Payments.PaymentCallbacks.Services;

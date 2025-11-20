@@ -1,6 +1,6 @@
-using IGCSELearningHub.Application.Payments.DTOs;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
 
-namespace IGCSELearningHub.Application.Payments.Interfaces;
+namespace IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 
 public interface IPaymentGateway
 {

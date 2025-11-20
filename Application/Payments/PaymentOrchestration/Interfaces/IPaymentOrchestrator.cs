@@ -1,4 +1,4 @@
-﻿using IGCSELearningHub.Application.Payments.DTOs;
+﻿using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
 using Microsoft.AspNetCore.Http;
 
 namespace IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;

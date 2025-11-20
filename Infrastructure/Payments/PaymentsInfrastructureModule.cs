@@ -1,4 +1,4 @@
-using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using IGCSELearningHub.Infrastructure.Payments.Options;
 using IGCSELearningHub.Infrastructure.Payments.Providers.VnPay;
 using Microsoft.Extensions.Configuration;

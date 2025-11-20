@@ -11,6 +11,7 @@ using IGCSELearningHub.Infrastructure.Email;
 using IGCSELearningHub.Infrastructure.Identity;
 using IGCSELearningHub.Infrastructure.Notifications;
 using IGCSELearningHub.Infrastructure.Payments;
+using IGCSELearningHub.Infrastructure.Payments.Repositories;
 using IGCSELearningHub.Infrastructure.Repositories;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;

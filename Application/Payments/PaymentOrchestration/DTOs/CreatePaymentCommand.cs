@@ -1,6 +1,6 @@
 ﻿using IGCSELearningHub.Domain.Payments.Enums;
 
-namespace IGCSELearningHub.Application.Payments.DTOs
+namespace IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs
 {
     public sealed class CreatePaymentCommand
     {
