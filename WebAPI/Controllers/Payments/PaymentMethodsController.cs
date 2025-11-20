@@ -5,7 +5,7 @@ using IGCSELearningHub.Application.Payments.PaymentMethods.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IGCSELearningHub.WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers.Payments
 {
     [ApiController]
     [ApiVersion("1.0")]

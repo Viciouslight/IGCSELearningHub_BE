@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace IGCSELearningHub.WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers.Payments
 {
     [ApiController]
     [ApiVersion("1.0")]

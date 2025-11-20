@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace IGCSELearningHub.WebAPI.Controllers
+namespace IGCSELearningHub.WebAPI.Controllers.Identity
 {
     [ApiController]
     [ApiVersion("1.0")]

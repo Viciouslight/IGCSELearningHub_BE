@@ -8,7 +8,6 @@ using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Payments.Entities;
 using IGCSELearningHub.Domain.Payments.Enums;
-using IGCSELearningHub.Infrastructure.Payments.Providers.VnPay;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -65,9 +64,7 @@ namespace IGCSELearningHub.Infrastructure.Payments.Providers
                 if (!string.IsNullOrWhiteSpace(reqIp)) ip = reqIp;
             }
             catch { /* fallback sang command.ClientIp */ }
-
-            var vnGateway = _gateway as VnPayPaymentGateway
-                ?? throw new InvalidOperationException("VNPay gateway required.");
+            command.ClientIp = ip;
 
             await using var transaction = await _uow.BeginTransactionAsync();
             try
@@ -83,15 +80,7 @@ namespace IGCSELearningHub.Infrastructure.Payments.Providers
                 await _uow.PaymentRepository.AddAsync(payment);
                 await _uow.SaveChangesAsync();
 
-                var checkout = await vnGateway.CreateCheckoutUrlInternalAsync(
-                    orderId: order.Id,
-                    amountVnd: amountVnd,
-                    clientIp: ip,
-                    bankCode: command.BankCode,
-                    orderDesc: command.OrderDescription,
-                    orderTypeCode: command.OrderTypeCode,
-                    ct: ct
-                );
+                var checkout = await _gateway.CreateCheckoutAsync(command, amountVnd, ct);
 
                 await transaction.CommitAsync();
                 return checkout;

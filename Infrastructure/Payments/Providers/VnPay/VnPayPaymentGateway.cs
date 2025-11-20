@@ -24,16 +24,17 @@ namespace IGCSELearningHub.Infrastructure.Payments.Providers.VnPay
             _opt = opt.Value;
         }
 
-        internal Task<PaymentCheckoutDTO> CreateCheckoutUrlInternalAsync(
-            int orderId, decimal amountVnd, string clientIp, string? bankCode, string? orderDesc, string orderTypeCode, CancellationToken ct)
+        public Task<PaymentCheckoutDTO> CreateCheckoutAsync(CreatePaymentCommand command, decimal amountVnd, CancellationToken ct = default)
         {
+            ct.ThrowIfCancellationRequested();
+
             var nowUtc = DateTime.UtcNow;
             var createDate = ToGmt7String(nowUtc, _opt.TimeZoneId);
             var expireDate = ToGmt7String(nowUtc.AddMinutes(_opt.ExpireMinutes), _opt.TimeZoneId);
-            var orderInfo = SanitizeOrderInfo(orderDesc ?? $"Thanh toan don hang #{orderId}");
+            var orderInfo = SanitizeOrderInfo(command.OrderDescription ?? $"Thanh toan don hang #{command.OrderId}");
 
             var vnp = new VnPayLibrary();
-            var txnRef = $"{orderId}-{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
+            var txnRef = $"{command.OrderId}-{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
 
             vnp.AddRequestData("vnp_Version", VnPayLibrary.VERSION);
             vnp.AddRequestData("vnp_Command", _opt.vnp_Command);
@@ -42,16 +43,16 @@ namespace IGCSELearningHub.Infrastructure.Payments.Providers.VnPay
             vnp.AddRequestData("vnp_CreateDate", createDate);
             vnp.AddRequestData("vnp_ExpireDate", expireDate);
             vnp.AddRequestData("vnp_CurrCode", _opt.vnp_CurrCode);
-            vnp.AddRequestData("vnp_IpAddr", clientIp);
+            vnp.AddRequestData("vnp_IpAddr", command.ClientIp);
             vnp.AddRequestData("vnp_Locale", _opt.vnp_Locale);
             vnp.AddRequestData("vnp_OrderInfo", orderInfo);
-            vnp.AddRequestData("vnp_OrderType", orderTypeCode);
+            vnp.AddRequestData("vnp_OrderType", command.OrderTypeCode);
             vnp.AddRequestData("vnp_ReturnUrl", _opt.vnp_ReturnUrl);
             vnp.AddRequestData("vnp_TxnRef", txnRef);
 
-            if (!string.IsNullOrWhiteSpace(bankCode))
+            if (!string.IsNullOrWhiteSpace(command.BankCode))
             {
-                var code = bankCode.Trim().ToUpperInvariant();
+                var code = command.BankCode.Trim().ToUpperInvariant();
                 if (AllowedBankCodes.Contains(code))
                 {
                     vnp.AddRequestData("vnp_BankCode", code);
