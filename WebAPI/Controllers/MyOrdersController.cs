@@ -1,7 +1,7 @@
 ﻿using Asp.Versioning;
 using IGCSELearningHub.Application.DTOs.Orders;
 using IGCSELearningHub.Application.Payments.DTOs;
-using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Payments.Enums;

@@ -1,4 +1,5 @@
 using IGCSELearningHub.Application.Payments.PaymentMethods;
+using IGCSELearningHub.Application.Payments.PaymentOrchestration;
 using IGCSELearningHub.Application.Payments.PaymentProcessing;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ public static class PaymentModule
     {
         services.AddPaymentMethodsModule();
         services.AddPaymentProcessingModule();
+        services.AddPaymentOrchestrationModule();
         return services;
     }
 }

@@ -15,7 +15,6 @@ public static class PaymentOrchestrationModule
         services.AddHttpContextAccessor();
 
         services.AddScoped<IPaymentGateway, VnPayPaymentGateway>();
-        services.AddScoped<IPaymentOrchestrator, PaymentOrchestrator>();
         return services;
     }
 }
