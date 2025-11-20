@@ -1,7 +1,7 @@
 ﻿using IGCSELearningHub.Application.DTOs.Orders;
 using IGCSELearningHub.Application.Wrappers;
 
-namespace IGCSELearningHub.Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Orders.OrderQueries.Interfaces
 {
     public interface IOrderQueryService
     {

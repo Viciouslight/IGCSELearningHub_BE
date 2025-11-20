@@ -1,10 +1,11 @@
-﻿using IGCSELearningHub.Application.DTOs.Orders;
-using IGCSELearningHub.Application.Services.Interfaces;
+﻿using IGCSELearningHub.Application;
+using IGCSELearningHub.Application.DTOs.Orders;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Orders.Entities;
+using IGCSELearningHub.Application.Orders.OrderQueries.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace IGCSELearningHub.Application.Services
+namespace IGCSELearningHub.Application.Orders.OrderQueries.Services
 {
     public class OrderQueryService : IOrderQueryService
     {

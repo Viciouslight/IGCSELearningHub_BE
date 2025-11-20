@@ -1,7 +1,9 @@
-﻿using IGCSELearningHub.Application.DTOs.Orders;
+﻿using IGCSELearningHub.Application;
+using IGCSELearningHub.Application.DTOs.Orders;
 using IGCSELearningHub.Application.Extensions;
 using IGCSELearningHub.Application.Orders.OrderPlacement.DTOs;
-using IGCSELearningHub.Application.Services.Interfaces;
+using IGCSELearningHub.Application.Orders.OrderPlacement.Interfaces;
+using IGCSELearningHub.Application.Orders.OrderPricing.Interfaces;
 using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Enums;
@@ -10,18 +12,20 @@ using IGCSELearningHub.Domain.Orders.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace IGCSELearningHub.Application.Services
+namespace IGCSELearningHub.Application.Orders.OrderPlacement.Services
 {
     public class OrderService : IOrderService
     {
         private readonly IUnitOfWork _uow;
         private readonly IDateTimeProvider _clock;
+        private readonly IOrderPricingService _pricing;
         private readonly ILogger<OrderService> _logger;
 
-        public OrderService(IUnitOfWork uow, IDateTimeProvider clock, ILogger<OrderService> logger)
+        public OrderService(IUnitOfWork uow, IDateTimeProvider clock, IOrderPricingService pricing, ILogger<OrderService> logger)
         {
             _uow = uow;
             _clock = clock;
+            _pricing = pricing;
             _logger = logger;
         }
 
@@ -30,91 +34,30 @@ namespace IGCSELearningHub.Application.Services
             if (req.Items == null || req.Items.Count == 0)
                 return ApiResult<OrderSummaryDTO>.Fail("No items.", 400);
 
-            // Validate & price lines
-            var lines = new List<OrderDetail>();
-            decimal total = 0m;
-
-            foreach (var it in req.Items)
-            {
-                if (it.Quantity <= 0) return ApiResult<OrderSummaryDTO>.Fail("Invalid quantity.", 400);
-
-                switch (it.ItemType)
-                {
-                    case ItemType.Course:
-                        {
-                            // One-time purchase validation for Course
-                            var alreadyEnrolled = await _uow.EnrollmentRepository.GetAllQueryable()
-                                .AnyAsync(e => e.AccountId == accountId
-                                               && e.CourseId == it.ItemId
-                                               && !e.IsDeleted
-                                               && e.Status != EnrollmentStatus.Canceled);
-
-                            if (alreadyEnrolled)
-                                return ApiResult<OrderSummaryDTO>.Fail($"Course #{it.ItemId} already purchased.", 400);
-
-                            var alreadyPaidOrder = await _uow.OrderRepository
-                                .GetAllQueryable($"{nameof(Order.OrderDetails)}")
-                                .AnyAsync(o => o.AccountId == accountId
-                                               && o.Status == OrderStatus.Paid
-                                               && o.OrderDetails.Any(d => !d.IsDeleted && d.ItemType == ItemType.Course && d.ItemId == it.ItemId));
-
-                            if (alreadyPaidOrder)
-                                return ApiResult<OrderSummaryDTO>.Fail($"Course #{it.ItemId} already purchased.", 400);
-
-                            var c = await _uow.CourseRepository.GetByIdAsync(it.ItemId);
-                            if (c == null) return ApiResult<OrderSummaryDTO>.Fail($"Course #{it.ItemId} not found.", 404);
-                            var price = c.Price;
-                            lines.Add(new OrderDetail { ItemType = ItemType.Course, ItemId = c.Id, Price = price, /*qty?*/ });
-                            total += price * it.Quantity;
-                            break;
-                        }
-                    case ItemType.CoursePackage:
-                        {
-                            // One-time purchase validation for Package
-                            var alreadyPaidPackage = await _uow.OrderRepository
-                                .GetAllQueryable($"{nameof(Order.OrderDetails)}")
-                                .AnyAsync(o => o.AccountId == accountId
-                                               && o.Status == OrderStatus.Paid
-                                               && o.OrderDetails.Any(d => !d.IsDeleted && d.ItemType == ItemType.CoursePackage && d.ItemId == it.ItemId));
-
-                            if (alreadyPaidPackage)
-                                return ApiResult<OrderSummaryDTO>.Fail($"Package #{it.ItemId} already purchased.", 400);
-
-                            var p = await _uow.CoursePackageRepository.GetByIdAsync(it.ItemId);
-                            if (p == null) return ApiResult<OrderSummaryDTO>.Fail($"Package #{it.ItemId} not found.", 404);
-                            var price = p.Price;
-                            lines.Add(new OrderDetail { ItemType = ItemType.CoursePackage, ItemId = p.Id, Price = price });
-                            total += price * it.Quantity;
-                            break;
-                        }
-                    case ItemType.Livestream:
-                        {
-                            var l = await _uow.LivestreamRepository.GetByIdAsync(it.ItemId);
-                            if (l == null) return ApiResult<OrderSummaryDTO>.Fail($"Livestream #{it.ItemId} not found.", 404);
-                            var price = l.Price;
-                            lines.Add(new OrderDetail { ItemType = ItemType.Livestream, ItemId = l.Id, Price = price });
-                            total += price * it.Quantity;
-                            break;
-                        }
-                    default:
-                        return ApiResult<OrderSummaryDTO>.Fail("Unsupported item type.", 400);
-                }
-            }
+            var quoteResult = await _pricing.BuildPriceQuoteAsync(accountId, req.Items);
+            if (!quoteResult.Succeeded) return ApiResult<OrderSummaryDTO>.Fail(quoteResult.Message ?? "Pricing failed.", quoteResult.StatusCode);
+            var quote = quoteResult.Data!;
 
             var order = new Order
             {
                 AccountId = accountId,
                 OrderDate = _clock.UtcNow,
-                TotalAmount = total,
+                TotalAmount = quote.TotalAmount,
                 Status = OrderStatus.Pending
             };
             await _uow.OrderRepository.AddAsync(order);
             await _uow.SaveChangesAsync();
 
-            foreach (var d in lines)
+            foreach (var line in quote.Items)
             {
-                d.OrderId = order.Id;
-                await _uow.OrderDetailRepository.AddAsync(d);
+                var detail = new OrderDetail
+                {
+                    OrderId = order.Id,
+                    ItemType = line.ItemType,
+                    ItemId = line.ItemId,
+                    Price = line.UnitPrice
+                };
+                await _uow.OrderDetailRepository.AddAsync(detail);
             }
             await _uow.SaveChangesAsync();
 

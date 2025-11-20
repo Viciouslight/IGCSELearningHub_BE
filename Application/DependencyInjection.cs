@@ -1,4 +1,5 @@
 using IGCSELearningHub.Application.Identity;
+using IGCSELearningHub.Application.Orders;
 using IGCSELearningHub.Application.Payments;
 using IGCSELearningHub.Application.Services;
 using IGCSELearningHub.Application.Services.Interfaces;
@@ -15,6 +16,7 @@ namespace IGCSELearningHub.Application
             services.AddAutoMapper(cfg => { }, AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddIdentityModule();
+            services.AddOrdersModule();
             services.AddScoped<IDateTimeProvider, DateTimeProvider>();
 
             services.AddScoped<IQuizService, QuizService>();
@@ -31,8 +33,6 @@ namespace IGCSELearningHub.Application
             services.AddScoped<ILessonStudentService, LessonStudentService>();
             services.AddScoped<IUnitService, UnitService>();
             services.AddScoped<IStudentSubmissionService, StudentSubmissionService>();
-            services.AddScoped<IOrderService, OrderService>();
-            services.AddScoped<IOrderQueryService, OrderQueryService>();
             services.AddScoped<IProgressService, ProgressService>();
             services.AddScoped<IAnalyticsService, AnalyticsService>();
             services.AddScoped<ILivestreamPublicService, LivestreamPublicService>();

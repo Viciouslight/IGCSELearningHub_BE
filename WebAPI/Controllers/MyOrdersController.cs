@@ -1,8 +1,9 @@
 ﻿using Asp.Versioning;
 using IGCSELearningHub.Application.Orders.OrderPlacement.DTOs;
+using IGCSELearningHub.Application.Orders.OrderPlacement.Interfaces;
+using IGCSELearningHub.Application.Orders.OrderQueries.Interfaces;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration.DTOs;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
-using IGCSELearningHub.Application.Services.Interfaces;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Payments.Enums;
 using Microsoft.AspNetCore.Authorization;

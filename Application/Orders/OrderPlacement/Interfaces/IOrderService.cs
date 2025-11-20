@@ -1,8 +1,8 @@
 ﻿using IGCSELearningHub.Application.DTOs.Orders;
-using IGCSELearningHub.Application.Orders.OrderPlacement.DTOs;
 using IGCSELearningHub.Application.Wrappers;
+using IGCSELearningHub.Application.Orders.OrderPlacement.DTOs;
 
-namespace IGCSELearningHub.Application.Services.Interfaces
+namespace IGCSELearningHub.Application.Orders.OrderPlacement.Interfaces
 {
     public interface IOrderService
     {
