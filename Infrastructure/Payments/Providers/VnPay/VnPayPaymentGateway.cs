@@ -9,7 +9,7 @@ using System.Text;
 
 namespace IGCSELearningHub.Infrastructure.Payments.Providers.VnPay
 {
-    public sealed class VnPayPaymentGateway : IPaymentGateway
+    public sealed class VnPayPaymentGateway : IPaymentGateway, IPaymentCallbackParser
     {
         private readonly VnPayOptions _opt;
         private static readonly HashSet<string> AllowedBankCodes = new(StringComparer.OrdinalIgnoreCase)

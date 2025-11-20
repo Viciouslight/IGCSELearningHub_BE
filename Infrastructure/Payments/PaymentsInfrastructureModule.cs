@@ -4,15 +4,14 @@ using IGCSELearningHub.Infrastructure.Payments.Providers.VnPay;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IGCSELearningHub.Infrastructure.Payments.Providers;
+namespace IGCSELearningHub.Infrastructure.Payments;
 
-public static class PaymentOrchestrationModule
+public static class PaymentsInfrastructureModule
 {
-    public static IServiceCollection AddPaymentOrchestrationModule(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddPaymentsInfrastructure(this IServiceCollection services, IConfiguration config)
     {
-        var section = config.GetSection("Vnpay");
-        services.Configure<VnPayOptions>(section);
         services.AddHttpContextAccessor();
+        services.Configure<VnPayOptions>(config.GetSection("Vnpay"));
 
         services.AddScoped<IPaymentGateway, VnPayPaymentGateway>();
         services.AddScoped<IPaymentCallbackParser, VnPayPaymentGateway>();

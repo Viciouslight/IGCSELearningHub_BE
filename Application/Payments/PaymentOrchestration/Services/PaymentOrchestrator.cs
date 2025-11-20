@@ -2,6 +2,7 @@ using IGCSELearningHub.Application.Identity.Devices.Interfaces;
 using IGCSELearningHub.Application.Notifications;
 using IGCSELearningHub.Application.Payments.DTOs;
 using IGCSELearningHub.Application.Payments.Interfaces;
+using IGCSELearningHub.Application.Payments.PaymentCallbacks.Interfaces;
 using IGCSELearningHub.Application.Payments.PaymentMethods.Helpers;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration.Interfaces;
 using IGCSELearningHub.Application.Services.Interfaces;
@@ -18,6 +19,7 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
 {
     private readonly IHttpContextAccessor _http;
     private readonly IPaymentGateway _gateway;
+    private readonly IPaymentCallbackHandler _callbackHandler;
     private readonly IUnitOfWork _uow;
     private readonly ILogger<PaymentOrchestrator> _logger;
     private readonly IEnrollmentAdminService? _enrollmentService;
@@ -28,6 +30,7 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
     public PaymentOrchestrator(
         IHttpContextAccessor http,
         IPaymentGateway gateway,
+        IPaymentCallbackHandler callbackHandler,
         IUnitOfWork uow,
         ILogger<PaymentOrchestrator> logger,
         IPushNotificationService pushNotifications,
@@ -37,6 +40,7 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
     {
         _http = http;
         _gateway = gateway;
+        _callbackHandler = callbackHandler;
         _uow = uow;
         _logger = logger;
         _enrollmentService = enrollmentService;
@@ -94,7 +98,7 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
 
     public async Task<PaymentResultDTO> HandleCallbackAsync(IQueryCollection query, CancellationToken ct = default)
     {
-        var result = await _gateway.ParseAndValidateCallbackAsync(query, ct);
+        var result = await _callbackHandler.HandleAsync(query, ct);
 
         var order = await _uow.OrderRepository.GetByIdAsync(result.OrderId);
         if (order is null)

@@ -1,11 +1,8 @@
-﻿using IGCSELearningHub.Application.Payments.DTOs;
-using Microsoft.AspNetCore.Http;
+using IGCSELearningHub.Application.Payments.DTOs;
 
-namespace IGCSELearningHub.Application.Payments.Interfaces
+namespace IGCSELearningHub.Application.Payments.Interfaces;
+
+public interface IPaymentGateway
 {
-    public interface IPaymentGateway
-    {
-        Task<PaymentCheckoutDTO> CreateCheckoutAsync(CreatePaymentCommand command, decimal amountVnd, CancellationToken ct = default);
-        Task<PaymentResultDTO> ParseAndValidateCallbackAsync(IQueryCollection query, CancellationToken ct = default);
-    }
+    Task<PaymentCheckoutDTO> CreateCheckoutAsync(CreatePaymentCommand command, decimal amountVnd, CancellationToken ct = default);
 }

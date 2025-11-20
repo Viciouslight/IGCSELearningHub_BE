@@ -10,6 +10,7 @@ using IGCSELearningHub.Application.Utils.Interfaces;
 using IGCSELearningHub.Infrastructure.Email;
 using IGCSELearningHub.Infrastructure.Identity;
 using IGCSELearningHub.Infrastructure.Notifications;
+using IGCSELearningHub.Infrastructure.Payments;
 using IGCSELearningHub.Infrastructure.Repositories;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -84,6 +85,7 @@ namespace IGCSELearningHub.Infrastructure
             services.AddSingleton<IPaymentRealtimeNotifier, NoOpPaymentRealtimeNotifier>();
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("IGCSELearningHub_DB")));
             services.AddIdentityInfrastructure();
+            services.AddPaymentsInfrastructure(config);
 
             #region repo config
             services.AddScoped<IAssignmentRepository, AssignmentRepository>();

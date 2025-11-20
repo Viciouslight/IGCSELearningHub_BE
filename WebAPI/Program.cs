@@ -101,7 +101,6 @@ namespace IGCSELearningHub.WebAPI
 
                 builder.Services.AddApplication();
                 builder.Services.AddInfrastructureServices(builder.Configuration);
-                builder.Services.AddPaymentServices(builder.Configuration);
 
                 builder.Services.AddEndpointsApiExplorer();
                 builder.Services.AddSwaggerGen(c =>

@@ -1,3 +1,4 @@
+using IGCSELearningHub.Application.Payments.PaymentCallbacks;
 using IGCSELearningHub.Application.Payments.PaymentMethods;
 using IGCSELearningHub.Application.Payments.PaymentOrchestration;
 using IGCSELearningHub.Application.Payments.PaymentProcessing;
@@ -10,6 +11,7 @@ public static class PaymentModule
     public static IServiceCollection AddPaymentModule(this IServiceCollection services)
     {
         services.AddPaymentMethodsModule();
+        services.AddPaymentCallbacksModule();
         services.AddPaymentProcessingModule();
         services.AddPaymentOrchestrationModule();
         return services;
