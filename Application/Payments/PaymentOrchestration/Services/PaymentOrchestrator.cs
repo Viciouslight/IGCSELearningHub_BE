@@ -1,6 +1,4 @@
-using IGCSELearningHub.Application.Identity.Devices.Interfaces;
 using IGCSELearningHub.Application.Notifications;
-using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.Interfaces;
 using IGCSELearningHub.Application.Orders.Ordering.OrderLifecycle.Interfaces;
 using IGCSELearningHub.Application.Payments.PaymentCallbacks.Interfaces;
 using IGCSELearningHub.Application.Payments.PaymentMethods.Helpers;
@@ -23,12 +21,8 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
     private readonly IPaymentCallbackHandler _callbackHandler;
     private readonly IUnitOfWork _uow;
     private readonly ILogger<PaymentOrchestrator> _logger;
-    private readonly IEnrollmentAdminService? _enrollmentService;
-    private readonly IPushNotificationService _pushNotifications;
     private readonly IPaymentRealtimeNotifier _realtimeNotifier;
-    private readonly IDeviceService _deviceService;
     private readonly IOrderLifecycleService _orderLifecycle;
-    private readonly IInvoiceIssuingService _invoiceIssuing;
 
     public PaymentOrchestrator(
         IHttpContextAccessor http,
@@ -36,24 +30,16 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
         IPaymentCallbackHandler callbackHandler,
         IUnitOfWork uow,
         ILogger<PaymentOrchestrator> logger,
-        IPushNotificationService pushNotifications,
         IPaymentRealtimeNotifier realtimeNotifier,
-        IDeviceService deviceService,
-        IInvoiceIssuingService invoiceIssuing,
-        IOrderLifecycleService orderLifecycle,
-        IEnrollmentAdminService? enrollmentService = null)
+        IOrderLifecycleService orderLifecycle)
     {
         _http = http;
         _gateway = gateway;
         _callbackHandler = callbackHandler;
         _uow = uow;
         _logger = logger;
-        _enrollmentService = enrollmentService;
-        _pushNotifications = pushNotifications;
         _realtimeNotifier = realtimeNotifier;
-        _deviceService = deviceService;
         _orderLifecycle = orderLifecycle;
-        _invoiceIssuing = invoiceIssuing;
     }
 
     public async Task<PaymentCheckoutDTO> CreateCheckoutAsync(CreatePaymentCommand command, CancellationToken ct = default)
@@ -198,40 +184,6 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
 
         await _orderLifecycle.MarkPaidAsync(order.Id);
 
-        // Auto-issue invoice after successful payment (best-effort)
-        try
-        {
-            if (_invoiceIssuing != null)
-            {
-                var buyerName = await GetBuyerNameAsync(order.AccountId, ct);
-                await _invoiceIssuing.IssueInvoiceAsync(order.Id, buyerName);
-            }
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Auto-invoice failed for order {OrderId}", order.Id);
-        }
-
-        if (_enrollmentService != null)
-        {
-            try
-            {
-                await _enrollmentService.CreateFromOrderAsync(order.Id);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Auto-enrollment failed for order {OrderId}", order.Id);
-            }
-        }
-
-        await _realtimeNotifier.NotifyPaymentSuccessAsync(order.AccountId, order.Id, ct);
-
-        var tokens = await _deviceService.GetActiveDeviceTokensAsync(order.AccountId, ct);
-        if (tokens.Count > 0)
-        {
-            await _pushNotifications.SendPaymentSuccessAsync(order.AccountId, order.Id, tokens, ct);
-        }
-
         result.Channel = payment?.Channel ?? PaymentChannel.Web;
         return result;
     }
@@ -267,11 +219,4 @@ public sealed class PaymentOrchestrator : IPaymentOrchestrator
         return method;
     }
 
-    private async Task<string> GetBuyerNameAsync(int accountId, CancellationToken ct)
-    {
-        var acc = await _uow.AccountRepository.GetByIdAsync(accountId);
-        if (acc == null) return $"Account #{accountId}";
-        if (!string.IsNullOrWhiteSpace(acc.FullName)) return acc.FullName!;
-        return acc.Email ?? $"Account #{accountId}";
-    }
 }
