@@ -1,4 +1,4 @@
-﻿using IGCSELearningHub.Application.Orders.Billing.DTOs;
+﻿using IGCSELearningHub.Application.Orders.Billing.Shared.DTOs;
 using IGCSELearningHub.Domain.Orders.Entities;
 
 namespace IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing

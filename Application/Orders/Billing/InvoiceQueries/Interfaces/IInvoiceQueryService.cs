@@ -1,4 +1,5 @@
-﻿using IGCSELearningHub.Application.Orders.Billing.DTOs;
+﻿using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.DTOs;
+using IGCSELearningHub.Application.Orders.Billing.Shared.DTOs;
 using IGCSELearningHub.Application.Wrappers;
 
 namespace IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.Interfaces

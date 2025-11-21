@@ -1,7 +1,7 @@
 ﻿using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Orders.Enums;
 
-namespace IGCSELearningHub.Application.Orders.Billing.DTOs
+namespace IGCSELearningHub.Application.Orders.Billing.Shared.DTOs
 {
     public class InvoiceLineDTO
     {

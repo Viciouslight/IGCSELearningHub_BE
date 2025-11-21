@@ -1,7 +1,8 @@
 ﻿using Asp.Versioning;
 using IGCSELearningHub.Application.Orders.Billing.CreditNotes.Interfaces;
-using IGCSELearningHub.Application.Orders.Billing.DTOs;
+using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.DTOs;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.Interfaces;
+using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.DTOs;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,11 +1,11 @@
 ﻿using IGCSELearningHub.Application.Extensions;
-using IGCSELearningHub.Application.Orders.Billing.DTOs;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing;
+using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.DTOs;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.Interfaces;
+using IGCSELearningHub.Application.Orders.Billing.Shared.DTOs;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Orders.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.Services
 {

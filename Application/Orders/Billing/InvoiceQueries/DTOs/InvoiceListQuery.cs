@@ -1,6 +1,6 @@
 ﻿using IGCSELearningHub.Domain.Orders.Enums;
 
-namespace IGCSELearningHub.Application.Orders.Billing.DTOs
+namespace IGCSELearningHub.Application.Orders.Billing.InvoiceQueries.DTOs
 {
     public class InvoiceListQuery
     {

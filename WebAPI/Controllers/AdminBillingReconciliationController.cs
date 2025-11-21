@@ -3,7 +3,7 @@ using IGCSELearningHub.Application.Orders.Billing.Reconciliation.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IGCSELearningHub.WebAPI.Controllers.Orders
+namespace IGCSELearningHub.WebAPI.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

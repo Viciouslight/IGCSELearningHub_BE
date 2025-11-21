@@ -3,7 +3,6 @@ using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Orders.Entities;
 using IGCSELearningHub.Domain.Orders.Enums;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace IGCSELearningHub.Application.Orders.Billing.InvoiceValidation.Services
 {

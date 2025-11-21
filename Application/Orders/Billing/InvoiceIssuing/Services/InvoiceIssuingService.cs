@@ -1,13 +1,11 @@
-﻿using IGCSELearningHub.Application.Orders.Billing.DTOs;
-using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing;
-using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.Interfaces;
+﻿using IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.Interfaces;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceNumbering.Interfaces;
 using IGCSELearningHub.Application.Orders.Billing.InvoiceValidation.Interfaces;
+using IGCSELearningHub.Application.Orders.Billing.Shared.DTOs;
 using IGCSELearningHub.Application.Wrappers;
 using IGCSELearningHub.Domain.Enums;
 using IGCSELearningHub.Domain.Orders.Entities;
 using IGCSELearningHub.Domain.Orders.Enums;
-using System.Linq;
 
 namespace IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.Services
 {

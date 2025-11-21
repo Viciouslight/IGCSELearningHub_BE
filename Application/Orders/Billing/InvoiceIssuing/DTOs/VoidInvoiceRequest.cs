@@ -1,4 +1,4 @@
-﻿namespace IGCSELearningHub.Application.Orders.Billing.DTOs
+﻿namespace IGCSELearningHub.Application.Orders.Billing.InvoiceIssuing.DTOs
 {
     public class VoidInvoiceRequest
     {
